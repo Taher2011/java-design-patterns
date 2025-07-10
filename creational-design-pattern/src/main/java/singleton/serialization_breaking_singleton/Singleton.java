@@ -1,6 +1,13 @@
-package clone_preventing_singleton;
+package serialization_breaking_singleton;
 
-public class Singleton implements Cloneable {
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Singleton implements Serializable {
 
 	private Singleton() {
 	}
@@ -28,11 +35,7 @@ public class Singleton implements Cloneable {
 		this.data = data;
 	}
 
-	public Object clone() throws CloneNotSupportedException {
-		throw new CloneNotSupportedException();
-	}
-
-	public static void main(String[] args) throws CloneNotSupportedException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		Singleton singleton1 = getSingleton();
 		singleton1.setData(55);
 		System.out.println("First reference: " + singleton1.hashCode());
@@ -46,9 +49,15 @@ public class Singleton implements Cloneable {
 
 		System.out.println();
 
-		Singleton singleton3 = (Singleton) singleton2.clone();
-		System.out.println("Cloned reference: " + singleton3.hashCode());
-		System.out.println("ClonedSingleton data value is: " + singleton3.getData());
+		FileOutputStream fos = new FileOutputStream("abc.txt");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(singleton2);
+
+		FileInputStream fis = new FileInputStream("abc.txt");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		Singleton singleton3 = (Singleton) ois.readObject();
+		System.out.println("Serialized reference: " + singleton3.hashCode());
+		System.out.println("SerializedSingleton data value is: " + singleton3.getData());
 
 	}
 

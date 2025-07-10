@@ -33,7 +33,6 @@ public class Singleton {
 		System.out.println();
 
 		Singleton singleton2 = getSingleton();
-		System.out.println(singleton2.hashCode());
 		System.out.println("Second reference: " + singleton2.hashCode());
 		System.out.println("Singleton data value is: " + singleton2.getData());
 	}

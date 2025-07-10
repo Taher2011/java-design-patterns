@@ -1,4 +1,4 @@
-package builder_pattern;
+package builder;
 
 import java.time.LocalDateTime;
 

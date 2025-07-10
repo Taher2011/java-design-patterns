@@ -1,6 +1,9 @@
-package builder_pattern;
+package client;
 
 import java.time.LocalDateTime;
+
+import builder.Price;
+import builder.Product;
 
 public class Builder {
 

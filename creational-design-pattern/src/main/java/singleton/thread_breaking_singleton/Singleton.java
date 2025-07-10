@@ -1,4 +1,4 @@
-package _01_thread_breaking_singleton;
+package thread_breaking_singleton;
 
 class Thread1 extends Thread {
 

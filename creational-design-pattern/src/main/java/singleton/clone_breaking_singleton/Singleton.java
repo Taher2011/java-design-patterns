@@ -1,6 +1,6 @@
-package plain_singleton;
+package clone_breaking_singleton;
 
-public class Singleton {
+public class Singleton implements Cloneable {
 
 	private Singleton() {
 	}
@@ -25,7 +25,11 @@ public class Singleton {
 		this.data = data;
 	}
 
-	public static void main(String[] args) {
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+
+	public static void main(String[] args) throws CloneNotSupportedException {
 		Singleton singleton1 = getSingleton();
 		System.out.println("First reference: " + singleton1.hashCode());
 		System.out.println("Singleton data value is: " + singleton1.getData());
@@ -36,6 +40,14 @@ public class Singleton {
 		System.out.println(singleton2.hashCode());
 		System.out.println("Second reference: " + singleton2.hashCode());
 		System.out.println("Singleton data value is: " + singleton2.getData());
+
+		System.out.println();
+
+		Singleton singleton3 = (Singleton) singleton2.clone();
+		System.out.println(singleton3.hashCode());
+		System.out.println("Cloned reference: " + singleton3.hashCode());
+		System.out.println("ClonedSingleton data value is: " + singleton3.getData());
+
 	}
 
 }

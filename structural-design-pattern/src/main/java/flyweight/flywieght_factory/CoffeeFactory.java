@@ -24,6 +24,10 @@ public class CoffeeFactory {
 		return coffee;
 	}
 
+	public Coffee getCoffee1(CoffeeType coffeeType) {
+		return coffeeType.getCoffee();
+	}
+
 //	public Coffee getCoffee(CoffeeType coffeeType) {
 //        return coffeeCache.computeIfAbsent(coffeeType, CoffeeType::getCoffee);
 //    }

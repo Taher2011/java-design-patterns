@@ -1,4 +1,4 @@
-package targets;
+package target;
 
 public class MultiMediaPlayer implements Mp3Player {
 

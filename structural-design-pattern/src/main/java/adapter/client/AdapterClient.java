@@ -3,8 +3,8 @@ package client;
 import adaptee.ITunesMediaPlayer;
 import adaptee.VLCMediaPlayer;
 import adapter.MediaAdapter;
-import targets.Mp3Player;
-import targets.MultiMediaPlayer;
+import target.Mp3Player;
+import target.MultiMediaPlayer;
 
 //Enum for supported media player types
 enum MediaPlayerType {

@@ -1,4 +1,4 @@
-package targets;
+package target;
 
 public interface Mp3Player {
 

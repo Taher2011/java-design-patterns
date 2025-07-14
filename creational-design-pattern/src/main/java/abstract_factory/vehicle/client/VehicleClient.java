@@ -1,11 +1,11 @@
-package client;
+package vehicle.client;
 
-import _01_product.AmericanVehicle;
-import _01_product.AsianVehicle;
-import _01_product.EuropeanVehicle;
-import _03_abstract_product_factory.AbstractVehicleFactory;
-import _04_concrete_product_factory.PremiumVehicleFactory;
-import _04_concrete_product_factory.StandardVehicleFactory;
+import vehicle._01_product.AmericanVehicle;
+import vehicle._01_product.AsianVehicle;
+import vehicle._01_product.EuropeanVehicle;
+import vehicle._03_abstract_product_factory.AbstractVehicleFactory;
+import vehicle._04_concrete_product_factory.PremiumVehicleFactory;
+import vehicle._04_concrete_product_factory.StandardVehicleFactory;
 
 public class VehicleClient {
 	private AsianVehicle asianVehicle;

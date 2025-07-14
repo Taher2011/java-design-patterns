@@ -1,14 +1,14 @@
-package _04_concrete_product_factory;
+package ecommerce._04_concrete_product_factory;
 
-import _01_product.FraudCheck;
-import _01_product.PaymentMethod;
-import _01_product.TransactionReceipt;
-import _02_concrete_product.StandardCreditCard;
-import _02_concrete_product.StandardFraudCheck;
-import _02_concrete_product.StandardPayPal;
-import _02_concrete_product.StandardReceipt;
-import _02_concrete_product.StandardUPI;
-import _03_abstract_product_factory.AbstractPaymentFactory;
+import ecommerce._01_product.FraudCheck;
+import ecommerce._01_product.PaymentMethod;
+import ecommerce._01_product.TransactionReceipt;
+import ecommerce._02_concrete_product.StandardCreditCard;
+import ecommerce._02_concrete_product.StandardFraudCheck;
+import ecommerce._02_concrete_product.StandardPayPal;
+import ecommerce._02_concrete_product.StandardReceipt;
+import ecommerce._02_concrete_product.StandardUPI;
+import ecommerce._03_abstract_product_factory.AbstractPaymentFactory;
 
 public class StandardPaymentFactory extends AbstractPaymentFactory {
 

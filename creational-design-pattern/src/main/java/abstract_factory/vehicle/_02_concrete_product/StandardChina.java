@@ -1,6 +1,6 @@
-package _02_concrete_product;
+package vehicle._02_concrete_product;
 
-import _01_product.AsianVehicle;
+import vehicle._01_product.AsianVehicle;
 
 public class StandardChina extends AsianVehicle {
 

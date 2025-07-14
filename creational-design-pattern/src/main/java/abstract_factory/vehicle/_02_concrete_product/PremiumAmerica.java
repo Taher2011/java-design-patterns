@@ -1,6 +1,6 @@
-package _02_concrete_product;
+package vehicle._02_concrete_product;
 
-import _01_product.AmericanVehicle;
+import vehicle._01_product.AmericanVehicle;
 
 public class PremiumAmerica extends AmericanVehicle {
 

@@ -1,4 +1,4 @@
-package _01_product;
+package insurance._01_product;
 
 public abstract class HomeInsurance implements Insurance {
 

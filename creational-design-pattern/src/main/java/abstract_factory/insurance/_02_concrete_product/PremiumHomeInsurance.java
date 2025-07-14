@@ -1,6 +1,6 @@
-package _02_concrete_product;
+package insurance._02_concrete_product;
 
-import _01_product.HomeInsurance;
+import insurance._01_product.HomeInsurance;
 
 public class PremiumHomeInsurance extends HomeInsurance {
 

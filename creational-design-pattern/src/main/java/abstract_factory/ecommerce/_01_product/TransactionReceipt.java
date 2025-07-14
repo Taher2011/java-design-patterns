@@ -1,4 +1,4 @@
-package _01_product;
+package ecommerce._01_product;
 
 public abstract class TransactionReceipt {
 	public abstract void generateReceipt();

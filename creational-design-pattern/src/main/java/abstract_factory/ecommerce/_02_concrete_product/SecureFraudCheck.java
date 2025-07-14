@@ -1,6 +1,6 @@
-package _02_concrete_product;
+package ecommerce._02_concrete_product;
 
-import _01_product.FraudCheck;
+import ecommerce._01_product.FraudCheck;
 
 public class SecureFraudCheck extends FraudCheck {
 

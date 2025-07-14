@@ -1,6 +1,6 @@
-package _02_concrete_product;
+package ecommerce._02_concrete_product;
 
-import _01_product.PaymentMethod;
+import ecommerce._01_product.PaymentMethod;
 
 public class SecurePayPal extends PaymentMethod {
 

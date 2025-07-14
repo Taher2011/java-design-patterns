@@ -1,7 +1,6 @@
 package client;
 
-import concrete_product_factory.BurgerFactory;
-import concrete_product_factory.PizzaFactory;
+import enums.FoodTypes;
 import product.FoodItem;
 import product_factory.FoodFactory;
 
@@ -9,13 +8,13 @@ public class FoodDeliveryApp {
 
 	public static void main(String[] args) {
 		// Order a Pizza
-		FoodFactory pizzaFactory = new PizzaFactory();
-		FoodItem pizza = pizzaFactory.getFood();
+		FoodFactory pizzaFactory = FoodFactory.getFood(FoodTypes.PIZZA);
+		FoodItem pizza = pizzaFactory.createFood();
 		pizza.prepare();
 
 		// Order a Burger
-		FoodFactory burgerFactory = new BurgerFactory();
-		FoodItem burger = burgerFactory.getFood();
+		FoodFactory burgerFactory = FoodFactory.getFood(FoodTypes.BURGER);
+		FoodItem burger = burgerFactory.createFood();
 		burger.prepare();
 
 	}

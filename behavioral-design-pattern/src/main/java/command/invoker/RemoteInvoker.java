@@ -42,9 +42,9 @@ public class RemoteInvoker {
 	}
 
 	public void executeAllCommands() {
-		for (LightCommand lightCommand : lightCommandsQueue) {
-			lightCommand.execute();
-			historyLightCommands.add(lightCommand);// Save for undo
+		for (LightCommand command : lightCommandsQueue) {
+			command.execute();
+			historyLightCommands.add(command);// Save for undo
 		}
 		lightCommandsQueue.clear();// Clear queue after execution
 	}

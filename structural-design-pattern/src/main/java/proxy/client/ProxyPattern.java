@@ -12,7 +12,7 @@ public class ProxyPattern {
 		database.executeQuery("select * from users");
 		System.out.println("===============================================");
 
-		database = DatabaseFactory.getDatabase(DatabaseTypes.PostGRE);
+		database = DatabaseFactory.getDatabase("mysql");
 		database.executeQuery("select * from users");
 		System.out.println("===============================================");
 

@@ -2,17 +2,25 @@ package client;
 
 import enums.FoodTypes;
 import product.FoodItem;
+import product_factory.FoodFactory;
 
 public class FoodDeliveryApp {
 
 	public static void main(String[] args) {
 		// Order a Pizza
-		FoodItem pizza = FoodTypes.PIZZA.createFood();
+		FoodFactory foodFactory = FoodFactory.createFoodFactory(FoodTypes.PIZZA);
+		FoodItem pizza = foodFactory.createFood();
 		pizza.prepare();
 
 		// Order a Burger
-		FoodItem burger = FoodTypes.BURGER.createFood();
+		foodFactory = FoodFactory.createFoodFactory(FoodTypes.BURGER);
+		FoodItem burger = foodFactory.createFood();
 		burger.prepare();
+
+		// Order a Sandwich
+		foodFactory = FoodFactory.createFoodFactory(FoodTypes.SANDWICH);
+		FoodItem sandwich = foodFactory.createFood();
+		sandwich.prepare();
 	}
 
 }

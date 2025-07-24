@@ -1,6 +1,6 @@
-package leaf;
+package _01_folder_hierarhy_leaf;
 
-import component.Folder;
+import _01_folder_hierarhy_component.Folder;
 
 public class File implements Folder {
 

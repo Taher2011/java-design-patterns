@@ -1,4 +1,4 @@
-package component;
+package _01_folder_hierarhy_component;
 
 public interface Folder {
 

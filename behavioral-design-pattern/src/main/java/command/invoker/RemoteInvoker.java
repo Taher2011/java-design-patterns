@@ -29,18 +29,40 @@ public class RemoteInvoker {
 		this.lightCommand = lightCommand;
 	}
 
+	/**
+	 * Executes the current command and adds it to history.
+	 */
 	public void pressSwitch() {
-		lightCommand.execute();
+		if (lightCommand != null) {
+			lightCommand.execute();
+			historyLightCommands.add(lightCommand);
+		} else {
+			System.out.println("No command set!");
+		}
 	}
 
+	/**
+	 * Undoes the last executed command.
+	 */
 	public void pressUndo() {
-		lightCommand.undo();
+		if (!historyLightCommands.isEmpty()) {
+			LightCommand lastCommand = historyLightCommands.remove(historyLightCommands.size() - 1);
+			lastCommand.undo();
+		} else {
+			System.out.println("No commands to undo!");
+		}
 	}
 
+	/**
+	 * Adds a command to the queue.
+	 */
 	public void addCommand(LightCommand lightCommand) {
 		lightCommandsQueue.add(lightCommand);
 	}
 
+	/**
+	 * Executes all commands in the queue and adds them to history.
+	 */
 	public void executeAllCommands() {
 		for (LightCommand command : lightCommandsQueue) {
 			command.execute();

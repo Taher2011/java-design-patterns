@@ -8,18 +8,21 @@ import receiver.LightReceiver;
 public class LightOnCommand implements LightCommand {
 
 	private LightReceiver lightReceiver;
+	private String location;
 
-	public LightOnCommand(LightReceiver lightReceiver) {
+	public LightOnCommand(LightReceiver lightReceiver, String location) {
 		this.lightReceiver = lightReceiver;
+		this.location = location;
 	}
 
 	@Override
 	public void execute() {
-		lightReceiver.lightOnAction();
+		lightReceiver.lightOnAction(location);
 	}
 
 	@Override
 	public void undo() {
-		lightReceiver.lightOffAction();
+		lightReceiver.lightOffAction(location);
 	}
+
 }

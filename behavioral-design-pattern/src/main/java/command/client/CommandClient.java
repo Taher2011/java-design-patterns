@@ -13,27 +13,34 @@ public class CommandClient {
 
 	public static void main(String[] args) throws InterruptedException {
 		LightReceiver lightReceiver = new LightReceiver();
-		LightCommand lightOnCommand = new LightOnCommand(lightReceiver);
-		LightCommand lightOffCommand = new LightOffCommand(lightReceiver);
+		LightCommand lightOnCommandBedRoom = new LightOnCommand(lightReceiver, "Bedroom");
+		LightCommand lightOffCommandBedRoom = new LightOffCommand(lightReceiver, "Bedroom");
+		LightCommand lightOnCommandLivingRoom = new LightOnCommand(lightReceiver, "LivingRoom");
 
-		RemoteInvoker remoteInvoker = new RemoteInvoker(lightOnCommand);
+		RemoteInvoker remoteInvoker = new RemoteInvoker(lightOnCommandBedRoom);
 		remoteInvoker.pressSwitch();
 		remoteInvoker.pressUndo();
 
-		remoteInvoker = new RemoteInvoker(lightOffCommand);
+		remoteInvoker = new RemoteInvoker(lightOffCommandBedRoom);
 		remoteInvoker.pressSwitch();
 
-		remoteInvoker = new RemoteInvoker(lightOnCommand);
+		remoteInvoker = new RemoteInvoker(lightOnCommandBedRoom);
 		remoteInvoker.pressSwitch();
-		remoteInvoker = new RemoteInvoker(lightOffCommand);
+
+		remoteInvoker = new RemoteInvoker(lightOffCommandBedRoom);
 		remoteInvoker.pressUndo();
+
+		remoteInvoker = new RemoteInvoker(lightOnCommandLivingRoom);
+		remoteInvoker.pressSwitch();
 
 		System.out.println("===========================================================");
+
 		RemoteInvoker bulkRemoteInvoker = new RemoteInvoker();
 		// Add commands to queue
-		bulkRemoteInvoker.addCommand(lightOnCommand);
-		bulkRemoteInvoker.addCommand(lightOffCommand);
-		bulkRemoteInvoker.addCommand(lightOnCommand);
+		bulkRemoteInvoker.addCommand(lightOnCommandBedRoom);
+		bulkRemoteInvoker.addCommand(lightOffCommandBedRoom);
+		bulkRemoteInvoker.addCommand(lightOnCommandBedRoom);
+		bulkRemoteInvoker.addCommand(lightOnCommandLivingRoom);
 
 		// Execute all commands
 		bulkRemoteInvoker.executeAllCommands();
@@ -41,12 +48,13 @@ public class CommandClient {
 		// Undo last command
 		System.out.println("\nUndoing last command:");
 		bulkRemoteInvoker.undoLastCommand();
+
 		System.out.println("===========================================================");
 
 		// Schedule commands
 		System.out.println("\nScheduling commands:");
-		remoteInvoker.scheduleCommand(lightOnCommand, 2, TimeUnit.SECONDS); // Turn on after 2 seconds
-		remoteInvoker.scheduleCommand(lightOffCommand, 4, TimeUnit.SECONDS); // Turn off after 4 seconds
+		remoteInvoker.scheduleCommand(lightOnCommandBedRoom, 2, TimeUnit.SECONDS); // Turn on after 2 seconds
+		remoteInvoker.scheduleCommand(lightOffCommandBedRoom, 4, TimeUnit.SECONDS); // Turn off after 4 seconds
 
 		// Wait for scheduled tasks to complete
 		Thread.sleep(5000);
@@ -54,18 +62,34 @@ public class CommandClient {
 		// Shutdown scheduler
 		remoteInvoker.shutdownScheduler();
 		System.out.println("===========================================================");
+
 		// Undo last command
 		System.out.println("\nUndoing last command:");
 		remoteInvoker.undoLastCommand();
 		System.out.println("===========================================================");
+
 		SmartHomeControllerInvoker smartHomeControllerInvoker = new SmartHomeControllerInvoker();
-		smartHomeControllerInvoker.setLightCommand(lightOnCommand);
-		smartHomeControllerInvoker.executeVoiceCommand("Turn on the light");
-		smartHomeControllerInvoker.setLightCommand(lightOffCommand);
-		smartHomeControllerInvoker.executeVoiceCommand("Turn off the light");
+
+		smartHomeControllerInvoker.setLightCommand(lightOnCommandLivingRoom);
+		smartHomeControllerInvoker.executeVoiceCommand("Turn on the Livingroom light");
+
+		System.out.println();
+
+		smartHomeControllerInvoker.setLightCommand(lightOnCommandBedRoom);
+		smartHomeControllerInvoker.executeVoiceCommand("Turn on the Bedroom light");
+
+		System.out.println();
+
+		smartHomeControllerInvoker.setLightCommand(lightOffCommandBedRoom);
+		smartHomeControllerInvoker.executeVoiceCommand("Turn off the Bedroom light");
+
+		System.out.println();
+
 		smartHomeControllerInvoker.UndoVoiceCommand();
-		smartHomeControllerInvoker.setLightCommand(lightOnCommand);
-		smartHomeControllerInvoker.executeVoiceCommand("Turn on the light");
+		System.out.println();
+
+		smartHomeControllerInvoker.setLightCommand(lightOnCommandBedRoom);
+		smartHomeControllerInvoker.executeVoiceCommand("Turn on the Bedroom ight");
 	}
 
 }

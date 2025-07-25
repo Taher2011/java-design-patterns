@@ -1,29 +1,27 @@
 package receiver;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LightReceiver {
 
-	private boolean isOn = false;
+	private Map<String, Boolean> lightStates = new HashMap<>();
 
-	public void lightOnAction() {
-		if (isOn) {
-			System.out.println("lights are already switched on");
+	public void lightOnAction(String location) {
+		if (!lightStates.getOrDefault(location, false)) {
+			System.out.println(location + " lights are switched-on now");
+			lightStates.put(location, true);
 			return;
 		}
-		isOn = true;
-		System.out.println("please switch on the lights");
+		System.out.println(location + " lights are already switched-on");
 	}
 
-	public void lightOffAction() {
-		if (!isOn) {
-			System.out.println("lights are already switched off");
+	public void lightOffAction(String location) {
+		if (lightStates.getOrDefault(location, false)) {
+			System.out.println(location + " lights are switched-off now");
+			lightStates.put(location, false);
 			return;
 		}
-		isOn = false;
-		System.out.println("please switch off the lights");
+		System.out.println(location + " lights are already switched-off");
 	}
-
-	public boolean isOn() {
-		return isOn;
-	}
-
 }

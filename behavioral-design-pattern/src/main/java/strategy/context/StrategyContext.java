@@ -1,5 +1,6 @@
 package context;
 
+import dto.Order;
 import strategy.FoodDeliveryStrategy;
 
 public class StrategyContext {
@@ -18,7 +19,7 @@ public class StrategyContext {
 		this.deliveryStrategy = deliveryStrategy;
 	}
 
-	public void processOrder(dto.Order order) {
+	public void processOrder(Order order) {
 		if (order == null)
 			throw new IllegalArgumentException("Order cannot be null");
 		deliveryStrategy.processOrder(order);

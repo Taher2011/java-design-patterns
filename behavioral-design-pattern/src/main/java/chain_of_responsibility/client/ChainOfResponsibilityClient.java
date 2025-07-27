@@ -23,16 +23,16 @@ public class ChainOfResponsibilityClient {
 		LoanRequest request3 = new LoanRequest(2000000, "Taher-3");
 		LoanRequest request4 = new LoanRequest(6000000, "Taher-4");
 
-		System.out.println("Processing Raju's request:");
+		System.out.println("Processing Taher-1 request:");
 		clerk.processLoanRequest(request1);
 
-		System.out.println("\nProcessing Shyam's request:");
+		System.out.println("\nProcessing Taher-2 request:");
 		clerk.processLoanRequest(request2);
 
-		System.out.println("\nProcessing Babu's request:");
+		System.out.println("\nProcessing Taher-3 request:");
 		clerk.processLoanRequest(request3);
 
-		System.out.println("\nProcessing Mohan's request:");
+		System.out.println("\nProcessing Taher-4 request:");
 		clerk.processLoanRequest(request4);
 	}
 

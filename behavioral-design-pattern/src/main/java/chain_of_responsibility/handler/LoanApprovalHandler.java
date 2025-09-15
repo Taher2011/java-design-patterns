@@ -1,6 +1,6 @@
-package handler;
+package chain_of_responsibility.handler;
 
-import dto.LoanRequest;
+import chain_of_responsibility.dto.LoanRequest;
 
 public abstract class LoanApprovalHandler {
 

@@ -1,10 +1,10 @@
-package client;
+package chain_of_responsibility.client;
 
-import concrete_handler.Clerk;
-import concrete_handler.Director;
-import concrete_handler.Manager;
-import dto.LoanRequest;
-import handler.LoanApprovalHandler;
+import chain_of_responsibility.concrete_handler.Clerk;
+import chain_of_responsibility.concrete_handler.Director;
+import chain_of_responsibility.concrete_handler.Manager;
+import chain_of_responsibility.dto.LoanRequest;
+import chain_of_responsibility.handler.LoanApprovalHandler;
 
 public class ChainOfResponsibilityClient {
 

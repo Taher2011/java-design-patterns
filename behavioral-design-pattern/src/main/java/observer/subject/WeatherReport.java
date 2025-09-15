@@ -1,12 +1,12 @@
-package subject;
+package observer.subject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import enums.WeatherType;
-import observer.Observer;
+import observer.enums.WeatherType;
+import observer.observer.Observer;
 
 public class WeatherReport {
 

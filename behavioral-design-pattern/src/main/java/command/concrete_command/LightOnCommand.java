@@ -1,8 +1,8 @@
-package concrete_command;
+package command.concrete_command;
 
-import command.LightCommand;
+import command.command.LightCommand;
+import command.receiver.LightReceiver;
 import lombok.Getter;
-import receiver.LightReceiver;
 
 @Getter
 public class LightOnCommand implements LightCommand {

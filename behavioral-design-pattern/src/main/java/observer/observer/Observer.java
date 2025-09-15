@@ -1,6 +1,6 @@
-package observer;
+package observer.observer;
 
-import enums.WeatherType;
+import observer.enums.WeatherType;
 
 public interface Observer {
 	void update(WeatherType weatherType, double value);

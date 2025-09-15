@@ -1,9 +1,9 @@
-package concrete_strategy;
+package strategy.concrete_strategy;
 
 import java.util.stream.Collectors;
 
-import dto.Order;
-import strategy.FoodDeliveryStrategy;
+import strategy.dto.Order;
+import strategy.strategy.FoodDeliveryStrategy;
 
 public abstract class BaseDeliveryStrategy implements FoodDeliveryStrategy {
 

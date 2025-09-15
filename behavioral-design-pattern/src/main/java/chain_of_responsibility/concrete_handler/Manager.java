@@ -1,7 +1,7 @@
-package concrete_handler;
+package chain_of_responsibility.concrete_handler;
 
-import dto.LoanRequest;
-import handler.LoanApprovalHandler;
+import chain_of_responsibility.dto.LoanRequest;
+import chain_of_responsibility.handler.LoanApprovalHandler;
 
 public class Manager extends LoanApprovalHandler {
 	@Override

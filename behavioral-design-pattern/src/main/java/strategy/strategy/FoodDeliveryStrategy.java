@@ -1,6 +1,6 @@
-package strategy;
+package strategy.strategy;
 
-import dto.Order;
+import strategy.dto.Order;
 
 public interface FoodDeliveryStrategy {
 

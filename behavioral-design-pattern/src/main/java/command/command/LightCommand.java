@@ -1,4 +1,4 @@
-package command;
+package command.command;
 
 public interface LightCommand {
 	void execute();

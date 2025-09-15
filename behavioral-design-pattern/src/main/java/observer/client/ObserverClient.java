@@ -1,10 +1,10 @@
-package client;
+package observer.client;
 
-import concrete_observer.MediaObserver;
-import concrete_observer.MobileObserver;
-import enums.WeatherType;
-import observer.Observer;
-import subject.WeatherReport;
+import observer.concrete_observer.MediaObserver;
+import observer.concrete_observer.MobileObserver;
+import observer.enums.WeatherType;
+import observer.observer.Observer;
+import observer.subject.WeatherReport;
 
 public class ObserverClient {
 

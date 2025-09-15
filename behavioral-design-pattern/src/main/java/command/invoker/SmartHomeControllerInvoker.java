@@ -1,6 +1,6 @@
-package invoker;
+package command.invoker;
 
-import command.LightCommand;
+import command.command.LightCommand;
 import lombok.NoArgsConstructor;
 
 //Invoker 2: SmartHomeController with voice command simulation

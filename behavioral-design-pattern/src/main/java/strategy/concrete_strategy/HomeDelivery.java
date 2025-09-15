@@ -1,6 +1,6 @@
-package concrete_strategy;
+package strategy.concrete_strategy;
 
-import dto.Order;
+import strategy.dto.Order;
 
 public class HomeDelivery extends BaseDeliveryStrategy {
 

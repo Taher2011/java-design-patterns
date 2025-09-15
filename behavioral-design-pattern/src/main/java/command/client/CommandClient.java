@@ -1,13 +1,13 @@
-package client;
+package command.client;
 
 import java.util.concurrent.TimeUnit;
 
-import command.LightCommand;
-import concrete_command.LightOffCommand;
-import concrete_command.LightOnCommand;
-import invoker.RemoteInvoker;
-import invoker.SmartHomeControllerInvoker;
-import receiver.LightReceiver;
+import command.command.LightCommand;
+import command.concrete_command.LightOffCommand;
+import command.concrete_command.LightOnCommand;
+import command.invoker.RemoteInvoker;
+import command.invoker.SmartHomeControllerInvoker;
+import command.receiver.LightReceiver;
 
 public class CommandClient {
 

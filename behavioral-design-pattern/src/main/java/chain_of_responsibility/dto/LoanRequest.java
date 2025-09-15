@@ -1,4 +1,4 @@
-package dto;
+package chain_of_responsibility.dto;
 
 public class LoanRequest {
 

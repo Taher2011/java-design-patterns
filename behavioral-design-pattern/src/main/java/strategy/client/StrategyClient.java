@@ -1,13 +1,13 @@
-package client;
+package strategy.client;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 
-import concrete_strategy.DineIn;
-import concrete_strategy.HomeDelivery;
-import concrete_strategy.TakeAway;
-import context.StrategyContext;
-import dto.Order;
+import strategy.concrete_strategy.DineIn;
+import strategy.concrete_strategy.HomeDelivery;
+import strategy.concrete_strategy.TakeAway;
+import strategy.context.StrategyContext;
+import strategy.dto.Order;
 
 public class StrategyClient {
 

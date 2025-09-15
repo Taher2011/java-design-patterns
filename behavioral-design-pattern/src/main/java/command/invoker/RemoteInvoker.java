@@ -1,4 +1,4 @@
-package invoker;
+package command.invoker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import command.LightCommand;
+import command.command.LightCommand;
 import lombok.NoArgsConstructor;
 
 //Invoker 1: Remote control with queue and scheduling

@@ -1,8 +1,8 @@
-package concrete_observer;
+package observer.concrete_observer;
 
-import enums.WeatherType;
-import observer.Observer;
-import subject.WeatherReport;
+import observer.enums.WeatherType;
+import observer.observer.Observer;
+import observer.subject.WeatherReport;
 
 public class MobileObserver implements Observer {
 

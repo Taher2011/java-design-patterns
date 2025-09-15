@@ -1,4 +1,4 @@
-package enums;
+package proxy.enums;
 
 import lombok.Getter;
 

@@ -1,7 +1,7 @@
-package adapter;
+package adapter.adapter;
 
-import adaptee.ModernMediaPlayer;
-import target.Mp3Player;
+import adapter.adaptee.ModernMediaPlayer;
+import adapter.target.Mp3Player;
 
 public class MediaAdapter implements Mp3Player {
 

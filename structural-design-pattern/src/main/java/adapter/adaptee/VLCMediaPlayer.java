@@ -1,4 +1,4 @@
-package adaptee;
+package adapter.adaptee;
 
 public class VLCMediaPlayer implements ModernMediaPlayer {
 	@Override

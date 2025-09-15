@@ -1,7 +1,7 @@
-package proxy_subject;
+package proxy.proxy_subject;
 
-import real_subject.Database;
-import subject.IDatabase;
+import proxy.real_subject.Database;
+import proxy.subject.IDatabase;
 
 public class ProxyDatabase implements IDatabase {
 

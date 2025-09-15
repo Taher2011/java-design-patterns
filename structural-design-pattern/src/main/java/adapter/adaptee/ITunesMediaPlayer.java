@@ -1,4 +1,4 @@
-package adaptee;
+package adapter.adaptee;
 
 public class ITunesMediaPlayer implements ModernMediaPlayer {
 	@Override

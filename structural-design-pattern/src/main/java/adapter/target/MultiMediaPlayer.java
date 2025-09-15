@@ -1,4 +1,4 @@
-package target;
+package adapter.target;
 
 public class MultiMediaPlayer implements Mp3Player {
 

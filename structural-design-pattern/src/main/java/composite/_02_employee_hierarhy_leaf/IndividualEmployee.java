@@ -1,7 +1,7 @@
-package _02_employee_hierarhy_leaf;
+package composite._02_employee_hierarhy_leaf;
 
-import _02_employee_hierarhy_component.Employee;
-import _02_employee_hierarhy_composite.EmployeeGroup;
+import composite._02_employee_hierarhy_component.Employee;
+import composite._02_employee_hierarhy_composite.EmployeeGroup;
 
 public class IndividualEmployee implements Employee {
 

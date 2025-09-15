@@ -1,10 +1,10 @@
-package client;
+package adapter.client;
 
-import adaptee.ITunesMediaPlayer;
-import adaptee.VLCMediaPlayer;
-import adapter.MediaAdapter;
-import target.Mp3Player;
-import target.MultiMediaPlayer;
+import adapter.adaptee.ITunesMediaPlayer;
+import adapter.adaptee.VLCMediaPlayer;
+import adapter.adapter.MediaAdapter;
+import adapter.target.Mp3Player;
+import adapter.target.MultiMediaPlayer;
 
 //Enum for supported media player types
 enum MediaPlayerType {

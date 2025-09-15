@@ -1,8 +1,8 @@
-package client;
+package proxy.client;
 
-import enums.DatabaseTypes;
-import factory.DatabaseFactory;
-import subject.IDatabase;
+import proxy.enums.DatabaseTypes;
+import proxy.factory.DatabaseFactory;
+import proxy.subject.IDatabase;
 
 public class ProxyPattern {
 

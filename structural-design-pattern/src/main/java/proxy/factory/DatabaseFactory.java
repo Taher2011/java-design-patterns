@@ -1,10 +1,10 @@
-package factory;
+package proxy.factory;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import enums.DatabaseTypes;
-import proxy_subject.ProxyDatabase;
+import proxy.enums.DatabaseTypes;
+import proxy.proxy_subject.ProxyDatabase;
 
 public class DatabaseFactory {
 

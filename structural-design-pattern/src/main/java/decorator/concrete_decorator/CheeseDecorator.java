@@ -1,7 +1,7 @@
-package concrete_decorator;
+package decorator.concrete_decorator;
 
-import component.Pizza;
-import decorator.PizzaDecorator;
+import decorator.component.Pizza;
+import decorator.decorator.PizzaDecorator;
 
 public class CheeseDecorator extends PizzaDecorator {
 

@@ -1,9 +1,9 @@
-package _01_folder_hierarhy_composite;
+package composite._01_folder_hierarhy_composite;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import _01_folder_hierarhy_component.Folder;
+import composite._01_folder_hierarhy_component.Folder;
 
 public class FolderGroup implements Folder {
 

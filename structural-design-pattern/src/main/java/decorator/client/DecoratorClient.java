@@ -1,9 +1,9 @@
-package client;
+package decorator.client;
 
-import component.Pizza;
-import concrete_component.IndianPizza;
-import concrete_decorator.CheeseDecorator;
-import concrete_decorator.VeggiesDecorator;
+import decorator.component.Pizza;
+import decorator.concrete_component.IndianPizza;
+import decorator.concrete_decorator.CheeseDecorator;
+import decorator.concrete_decorator.VeggiesDecorator;
 
 public class DecoratorClient {
 

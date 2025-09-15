@@ -1,7 +1,7 @@
-package real_subject;
+package proxy.real_subject;
 
 import lombok.Getter;
-import subject.IDatabase;
+import proxy.subject.IDatabase;
 
 @Getter
 public class Database implements IDatabase {

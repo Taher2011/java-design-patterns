@@ -1,10 +1,10 @@
-package flywieght_factory;
+package flyweight.flywieght_factory;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import concrete_flyweight_intrinsic.Coffee;
-import enums.CoffeeType;
+import flyweight.concrete_flyweight_intrinsic.Coffee;
+import flyweight.enums.CoffeeType;
 
 public class CoffeeFactory {
 

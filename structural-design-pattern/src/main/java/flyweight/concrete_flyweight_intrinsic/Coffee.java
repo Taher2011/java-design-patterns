@@ -1,9 +1,9 @@
-package concrete_flyweight_intrinsic;
+package flyweight.concrete_flyweight_intrinsic;
 
 import java.math.BigDecimal;
 
-import extrinsic_entity.Order;
-import flyweight.CoffeeFlyweight;
+import flyweight.extrinsic_entity.Order;
+import flyweight.flyweight.CoffeeFlyweight;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

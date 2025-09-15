@@ -1,8 +1,8 @@
-package enums;
+package flyweight.enums;
 
 import java.math.BigDecimal;
 
-import concrete_flyweight_intrinsic.Coffee;
+import flyweight.concrete_flyweight_intrinsic.Coffee;
 
 public enum CoffeeType {
 

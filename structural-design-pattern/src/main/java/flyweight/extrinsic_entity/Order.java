@@ -1,4 +1,4 @@
-package extrinsic_entity;
+package flyweight.extrinsic_entity;
 
 import java.time.LocalDateTime;
 

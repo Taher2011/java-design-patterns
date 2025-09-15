@@ -1,11 +1,11 @@
-package client;
+package flyweight.client;
 
 import java.time.LocalDateTime;
 
-import concrete_flyweight_intrinsic.Coffee;
-import enums.CoffeeType;
-import extrinsic_entity.Order;
-import flywieght_factory.CoffeeFactory;
+import flyweight.concrete_flyweight_intrinsic.Coffee;
+import flyweight.enums.CoffeeType;
+import flyweight.extrinsic_entity.Order;
+import flyweight.flywieght_factory.CoffeeFactory;
 
 public class FlyweightPattern {
 	public static void main(String[] args) {

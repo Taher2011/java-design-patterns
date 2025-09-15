@@ -1,8 +1,8 @@
-package _02_employee_hierarhy_client;
+package composite._02_employee_hierarhy_client;
 
-import _02_employee_hierarhy_component.Employee;
-import _02_employee_hierarhy_composite.EmployeeGroup;
-import _02_employee_hierarhy_leaf.IndividualEmployee;
+import composite._02_employee_hierarhy_component.Employee;
+import composite._02_employee_hierarhy_composite.EmployeeGroup;
+import composite._02_employee_hierarhy_leaf.IndividualEmployee;
 
 public class CompositePattern {
 

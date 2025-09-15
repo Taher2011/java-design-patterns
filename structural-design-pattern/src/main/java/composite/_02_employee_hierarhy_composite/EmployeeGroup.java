@@ -1,9 +1,9 @@
-package _02_employee_hierarhy_composite;
+package composite._02_employee_hierarhy_composite;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import _02_employee_hierarhy_component.Employee;
+import composite._02_employee_hierarhy_component.Employee;
 
 public class EmployeeGroup implements Employee {
 

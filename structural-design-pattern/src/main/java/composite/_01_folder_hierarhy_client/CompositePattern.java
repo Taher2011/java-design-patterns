@@ -1,8 +1,8 @@
-package _01_folder_hierarhy_client;
+package composite._01_folder_hierarhy_client;
 
-import _01_folder_hierarhy_component.Folder;
-import _01_folder_hierarhy_composite.FolderGroup;
-import _01_folder_hierarhy_leaf.File;
+import composite._01_folder_hierarhy_component.Folder;
+import composite._01_folder_hierarhy_composite.FolderGroup;
+import composite._01_folder_hierarhy_leaf.File;
 
 public class CompositePattern {
 

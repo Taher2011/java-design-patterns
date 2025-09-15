@@ -1,6 +1,6 @@
-package concrete_component;
+package decorator.concrete_component;
 
-import component.Pizza;
+import decorator.component.Pizza;
 
 public class FrenchPizza extends Pizza {
 

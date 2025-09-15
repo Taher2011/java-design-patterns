@@ -1,6 +1,6 @@
-package insurance._02_concrete_product;
+package abstract_factory.insurance._02_concrete_product;
 
-import insurance._01_product.AutoInsurance;
+import abstract_factory.insurance._01_product.AutoInsurance;
 
 public class BasicAutoInsurance extends AutoInsurance {
 

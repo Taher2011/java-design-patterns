@@ -1,12 +1,12 @@
-package insurance._04_concrete_product_factory;
+package abstract_factory.insurance._04_concrete_product_factory;
 
-import insurance._01_product.AutoInsurance;
-import insurance._01_product.HealthInsurance;
-import insurance._01_product.HomeInsurance;
-import insurance._02_concrete_product.PremiumAutoInsurance;
-import insurance._02_concrete_product.PremiumHealthInsurance;
-import insurance._02_concrete_product.PremiumHomeInsurance;
-import insurance._03_abstract_product_factory.AbstractInsuranceFactory;
+import abstract_factory.insurance._01_product.AutoInsurance;
+import abstract_factory.insurance._01_product.HealthInsurance;
+import abstract_factory.insurance._01_product.HomeInsurance;
+import abstract_factory.insurance._02_concrete_product.PremiumAutoInsurance;
+import abstract_factory.insurance._02_concrete_product.PremiumHealthInsurance;
+import abstract_factory.insurance._02_concrete_product.PremiumHomeInsurance;
+import abstract_factory.insurance._03_abstract_product_factory.AbstractInsuranceFactory;
 
 public class PremiumInsuranceFactory extends AbstractInsuranceFactory {
 

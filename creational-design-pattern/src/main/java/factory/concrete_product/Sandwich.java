@@ -1,6 +1,6 @@
-package concrete_product;
+package factory.concrete_product;
 
-import product.FoodItem;
+import factory.product.FoodItem;
 
 public class Sandwich implements FoodItem {
 

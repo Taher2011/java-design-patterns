@@ -1,4 +1,4 @@
-package product;
+package factory.product;
 
 public interface FoodItem {
 	void prepare();

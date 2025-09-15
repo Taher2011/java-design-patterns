@@ -1,11 +1,11 @@
-package ecommerce.client;
+package abstract_factory.ecommerce.client;
 
-import ecommerce._01_product.FraudCheck;
-import ecommerce._01_product.PaymentMethod;
-import ecommerce._01_product.TransactionReceipt;
-import ecommerce._03_abstract_product_factory.AbstractPaymentFactory;
-import ecommerce._04_concrete_product_factory.SecurePaymentFactory;
-import ecommerce._04_concrete_product_factory.StandardPaymentFactory;
+import abstract_factory.ecommerce._01_product.FraudCheck;
+import abstract_factory.ecommerce._01_product.PaymentMethod;
+import abstract_factory.ecommerce._01_product.TransactionReceipt;
+import abstract_factory.ecommerce._03_abstract_product_factory.AbstractPaymentFactory;
+import abstract_factory.ecommerce._04_concrete_product_factory.SecurePaymentFactory;
+import abstract_factory.ecommerce._04_concrete_product_factory.StandardPaymentFactory;
 
 public class PaymentClient {
 

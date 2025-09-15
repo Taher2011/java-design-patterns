@@ -1,4 +1,4 @@
-package enums;
+package factory.enums;
 
 public enum FoodTypes {
 

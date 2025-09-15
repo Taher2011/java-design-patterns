@@ -1,8 +1,8 @@
-package ecommerce._03_abstract_product_factory;
+package abstract_factory.ecommerce._03_abstract_product_factory;
 
-import ecommerce._01_product.FraudCheck;
-import ecommerce._01_product.PaymentMethod;
-import ecommerce._01_product.TransactionReceipt;
+import abstract_factory.ecommerce._01_product.FraudCheck;
+import abstract_factory.ecommerce._01_product.PaymentMethod;
+import abstract_factory.ecommerce._01_product.TransactionReceipt;
 
 public abstract class AbstractPaymentFactory {
 	public abstract PaymentMethod createCreditCard();

@@ -1,6 +1,6 @@
-package vehicle._02_concrete_product;
+package abstract_factory.vehicle._02_concrete_product;
 
-import vehicle._01_product.EuropeanVehicle;
+import abstract_factory.vehicle._01_product.EuropeanVehicle;
 
 public class StandardFrance extends EuropeanVehicle {
 

@@ -1,6 +1,6 @@
-package ecommerce._02_concrete_product;
+package abstract_factory.ecommerce._02_concrete_product;
 
-import ecommerce._01_product.TransactionReceipt;
+import abstract_factory.ecommerce._01_product.TransactionReceipt;
 
 public class SecureReceipt extends TransactionReceipt {
 

@@ -1,4 +1,4 @@
-package serialization_breaking_singleton;
+package singleton.serialization_breaking_singleton;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

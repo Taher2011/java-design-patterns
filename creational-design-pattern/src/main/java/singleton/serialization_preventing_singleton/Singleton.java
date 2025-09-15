@@ -1,4 +1,4 @@
-package serialization_preventing_singleton;
+package singleton.serialization_preventing_singleton;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

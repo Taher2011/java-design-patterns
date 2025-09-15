@@ -1,4 +1,4 @@
-package clone_breaking_singleton;
+package singleton.clone_breaking_singleton;
 
 public class Singleton implements Cloneable {
 
@@ -25,6 +25,7 @@ public class Singleton implements Cloneable {
 		this.data = data;
 	}
 
+	@Override
 	public Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}

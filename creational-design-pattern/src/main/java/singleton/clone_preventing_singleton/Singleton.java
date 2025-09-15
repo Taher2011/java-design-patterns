@@ -1,4 +1,4 @@
-package clone_preventing_singleton;
+package singleton.clone_preventing_singleton;
 
 public class Singleton implements Cloneable {
 
@@ -28,6 +28,7 @@ public class Singleton implements Cloneable {
 		this.data = data;
 	}
 
+	@Override
 	public Object clone() throws CloneNotSupportedException {
 		throw new CloneNotSupportedException();
 	}

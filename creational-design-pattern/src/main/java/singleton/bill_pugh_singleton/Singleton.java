@@ -1,4 +1,4 @@
-package bill_pugh_singleton;
+package singleton.bill_pugh_singleton;
 
 public class Singleton {
 

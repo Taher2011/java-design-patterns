@@ -1,7 +1,8 @@
-package thread_breaking_singleton;
+package singleton.thread_breaking_singleton;
 
 class Thread1 extends Thread {
 
+	@Override
 	public void run() {
 		Singleton singleton = Singleton.getSingleton();
 		singleton.setPrice(55);
@@ -13,6 +14,7 @@ class Thread1 extends Thread {
 
 class Thread2 extends Thread {
 
+	@Override
 	public void run() {
 		Singleton singleton = Singleton.getSingleton();
 		System.out.println("First reference: " + Thread.currentThread().getName() + " " + singleton.hashCode());

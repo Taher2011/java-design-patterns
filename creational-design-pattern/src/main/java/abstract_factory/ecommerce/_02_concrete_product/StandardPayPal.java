@@ -1,6 +1,6 @@
-package ecommerce._02_concrete_product;
+package abstract_factory.ecommerce._02_concrete_product;
 
-import ecommerce._01_product.PaymentMethod;
+import abstract_factory.ecommerce._01_product.PaymentMethod;
 
 public class StandardPayPal extends PaymentMethod {
 

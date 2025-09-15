@@ -1,13 +1,13 @@
-package product_factory;
+package factory.product_factory;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import concrete_product_factory.BurgerFactory;
-import concrete_product_factory.PizzaFactory;
-import concrete_product_factory.SandwichFactory;
-import enums.FoodTypes;
-import product.FoodItem;
+import factory.concrete_product_factory.BurgerFactory;
+import factory.concrete_product_factory.PizzaFactory;
+import factory.concrete_product_factory.SandwichFactory;
+import factory.enums.FoodTypes;
+import factory.product.FoodItem;
 
 public abstract class FoodFactory {
 

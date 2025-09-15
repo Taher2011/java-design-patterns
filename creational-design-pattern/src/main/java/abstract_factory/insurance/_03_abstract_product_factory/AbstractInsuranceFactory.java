@@ -1,8 +1,8 @@
-package insurance._03_abstract_product_factory;
+package abstract_factory.insurance._03_abstract_product_factory;
 
-import insurance._01_product.AutoInsurance;
-import insurance._01_product.HealthInsurance;
-import insurance._01_product.HomeInsurance;
+import abstract_factory.insurance._01_product.AutoInsurance;
+import abstract_factory.insurance._01_product.HealthInsurance;
+import abstract_factory.insurance._01_product.HomeInsurance;
 
 public abstract class AbstractInsuranceFactory {
 

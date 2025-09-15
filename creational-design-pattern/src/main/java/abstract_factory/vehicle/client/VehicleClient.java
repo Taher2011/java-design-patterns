@@ -1,11 +1,11 @@
-package vehicle.client;
+package abstract_factory.vehicle.client;
 
-import vehicle._01_product.AmericanVehicle;
-import vehicle._01_product.AsianVehicle;
-import vehicle._01_product.EuropeanVehicle;
-import vehicle._03_abstract_product_factory.AbstractVehicleFactory;
-import vehicle._04_concrete_product_factory.PremiumVehicleFactory;
-import vehicle._04_concrete_product_factory.StandardVehicleFactory;
+import abstract_factory.vehicle._01_product.AmericanVehicle;
+import abstract_factory.vehicle._01_product.AsianVehicle;
+import abstract_factory.vehicle._01_product.EuropeanVehicle;
+import abstract_factory.vehicle._03_abstract_product_factory.AbstractVehicleFactory;
+import abstract_factory.vehicle._04_concrete_product_factory.PremiumVehicleFactory;
+import abstract_factory.vehicle._04_concrete_product_factory.StandardVehicleFactory;
 
 public class VehicleClient {
 	private AsianVehicle asianVehicle;
@@ -19,18 +19,21 @@ public class VehicleClient {
 	}
 
 	public void description() {
-		if (asianVehicle != null)
+		if (asianVehicle != null) {
 			asianVehicle.describe();
-		else
+		} else {
 			System.out.println("Asian Vehicle not available");
-		if (europeanVehicle != null)
+		}
+		if (europeanVehicle != null) {
 			europeanVehicle.describe();
-		else
+		} else {
 			System.out.println("European Vehicle not available");
-		if (americanVehicle != null)
+		}
+		if (americanVehicle != null) {
 			americanVehicle.describe();
-		else
+		} else {
 			System.out.println("American Vehicle not available");
+		}
 	}
 
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package reflection_preventing_singleton;
+package singleton.reflection_preventing_singleton;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

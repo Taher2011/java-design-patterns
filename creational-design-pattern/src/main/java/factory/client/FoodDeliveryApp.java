@@ -1,8 +1,8 @@
-package client;
+package factory.client;
 
-import enums.FoodTypes;
-import product.FoodItem;
-import product_factory.FoodFactory;
+import factory.enums.FoodTypes;
+import factory.product.FoodItem;
+import factory.product_factory.FoodFactory;
 
 public class FoodDeliveryApp {
 

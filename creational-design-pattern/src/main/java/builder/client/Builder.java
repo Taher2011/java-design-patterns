@@ -1,9 +1,9 @@
-package client;
+package builder.client;
 
 import java.time.LocalDateTime;
 
-import builder.Price;
-import builder.Product;
+import builder.builder.Price;
+import builder.builder.Product;
 
 public class Builder {
 

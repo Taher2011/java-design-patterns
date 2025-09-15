@@ -1,8 +1,8 @@
-package concrete_product_factory;
+package factory.concrete_product_factory;
 
-import concrete_product.Burger;
-import product.FoodItem;
-import product_factory.FoodFactory;
+import factory.concrete_product.Burger;
+import factory.product.FoodItem;
+import factory.product_factory.FoodFactory;
 
 public class BurgerFactory extends FoodFactory {
 

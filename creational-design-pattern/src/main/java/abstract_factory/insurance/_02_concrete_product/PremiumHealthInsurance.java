@@ -1,6 +1,6 @@
-package insurance._02_concrete_product;
+package abstract_factory.insurance._02_concrete_product;
 
-import insurance._01_product.HealthInsurance;
+import abstract_factory.insurance._01_product.HealthInsurance;
 
 public class PremiumHealthInsurance extends HealthInsurance {
 

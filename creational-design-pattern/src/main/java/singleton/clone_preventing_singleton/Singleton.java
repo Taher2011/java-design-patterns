@@ -30,7 +30,7 @@ public class Singleton implements Cloneable {
 
 	@Override
 	public Object clone() throws CloneNotSupportedException {
-		throw new CloneNotSupportedException();
+		throw new CloneNotSupportedException("Cloning not allowed for Singleton");
 	}
 
 	public static void main(String[] args) throws CloneNotSupportedException {

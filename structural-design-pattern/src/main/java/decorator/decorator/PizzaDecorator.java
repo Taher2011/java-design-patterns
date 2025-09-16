@@ -11,8 +11,10 @@ public abstract class PizzaDecorator extends Pizza {
 		this.pizza = pizza;
 	}
 
+	@Override
 	public abstract String getDescription();
 
+	@Override
 	public abstract double getPrice();
 
 }

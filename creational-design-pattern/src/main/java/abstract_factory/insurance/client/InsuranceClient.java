@@ -4,8 +4,6 @@ import abstract_factory.insurance._01_product.AutoInsurance;
 import abstract_factory.insurance._01_product.HealthInsurance;
 import abstract_factory.insurance._01_product.HomeInsurance;
 import abstract_factory.insurance._03_abstract_product_factory.AbstractInsuranceFactory;
-import abstract_factory.insurance._04_concrete_product_factory.BasicInsuranceFactory;
-import abstract_factory.insurance._04_concrete_product_factory.PremiumInsuranceFactory;
 
 public class InsuranceClient {
 
@@ -20,19 +18,19 @@ public class InsuranceClient {
 	}
 
 	public void description() {
-		autoInsurance.getPolicyDetails();
-		healthInsurance.getPolicyDetails();
-		homeInsurance.getPolicyDetails();
+		autoInsurance.autoInsurancepolicyDeatils();
+		healthInsurance.healthInsurancepolicyDeatils();
+		homeInsurance.homeInsurancepolicyDeatils();
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Testing Basic Insurance Factory:");
-		AbstractInsuranceFactory basicFactory = new BasicInsuranceFactory();
+		AbstractInsuranceFactory basicFactory = AbstractInsuranceFactory.createFactory("basic");
 		InsuranceClient standardClient = new InsuranceClient(basicFactory);
 		standardClient.description();
 
 		System.out.println("\nTesting Premium Insurance Factory:");
-		AbstractInsuranceFactory premiumFactory = new PremiumInsuranceFactory();
+		AbstractInsuranceFactory premiumFactory = AbstractInsuranceFactory.createFactory("premium");
 		InsuranceClient premiumClient = new InsuranceClient(premiumFactory);
 		premiumClient.description();
 	}

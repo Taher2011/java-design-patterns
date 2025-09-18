@@ -1,17 +1,17 @@
 package chain_of_responsibility.client;
 
-import chain_of_responsibility.concrete_handler.Clerk;
-import chain_of_responsibility.concrete_handler.Director;
-import chain_of_responsibility.concrete_handler.Manager;
+import chain_of_responsibility.concrete_handler.AssistantManager;
+import chain_of_responsibility.concrete_handler.RegionalManager;
+import chain_of_responsibility.concrete_handler.BranchManager;
 import chain_of_responsibility.dto.LoanRequest;
 import chain_of_responsibility.handler.LoanApprovalHandler;
 
 public class ChainOfResponsibilityClient {
 
 	public static void main(String[] args) { // Create handlers
-		LoanApprovalHandler clerk = new Clerk();
-		LoanApprovalHandler manager = new Manager();
-		LoanApprovalHandler director = new Director();
+		LoanApprovalHandler clerk = new AssistantManager();
+		LoanApprovalHandler manager = new BranchManager();
+		LoanApprovalHandler director = new RegionalManager();
 
 		// Set up the chain: Clerk -> Manager -> Director
 		clerk.setNextHandler(manager);

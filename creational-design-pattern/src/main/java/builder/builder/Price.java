@@ -12,10 +12,10 @@ public class Price {
 		this.finalPrice = priceBuilder.finalPrice;
 	}
 
-	private Double basePrice;
-	private String currency;
-	private Double discount;
-	private Double finalPrice;
+	private final Double basePrice;
+	private final String currency;
+	private final Double discount;
+	private final Double finalPrice;
 
 	public static PriceBuilder builder() {
 		return new PriceBuilder();

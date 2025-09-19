@@ -3,8 +3,10 @@ package builder.builder;
 import java.time.LocalDateTime;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class Product {
 
 	public Product(ProductBuilder productBuilder) {
@@ -16,12 +18,12 @@ public class Product {
 		this.expiryDate = productBuilder.expiryDate;
 	}
 
-	private int id;
-	private Price price;
-	private String color;
-	private String name;
-	private String modelNo;
-	private LocalDateTime expiryDate;
+	private final int id;
+	private final Price price;
+	private final String color;
+	private final String name;
+	private final String modelNo;
+	private final LocalDateTime expiryDate;
 
 	public static ProductBuilder builder() {
 		return new ProductBuilder();

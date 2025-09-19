@@ -5,6 +5,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <description>creational-design-pattern</description>
   <dependencies>
+	  <dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>42.7.4</version> <!-- latest stable -->
+	</dependency>
+
 	<dependency>
 		<groupId>org.projectlombok</groupId>
 		<artifactId>lombok</artifactId>

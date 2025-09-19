@@ -1,6 +1,6 @@
 package factory.product_factory;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 import factory.concrete_product_factory.BurgerFactory;
@@ -11,7 +11,7 @@ import factory.product.FoodItem;
 
 public abstract class FoodFactory {
 
-	private static Map<FoodTypes, FoodFactory> factories = new HashMap<>();
+	private static Map<FoodTypes, FoodFactory> factories = new EnumMap<>(FoodTypes.class);
 
 	static {
 		factories.put(FoodTypes.PIZZA, new PizzaFactory());

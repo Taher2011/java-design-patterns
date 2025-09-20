@@ -1,0 +1,23 @@
+The Abstract Factory Pattern is a creational design pattern used when dealing with families of related products, 
+each having different variants (e.g., Basic, Premium, Deluxe in Insurance).
+
+The abstract factory (e.g., AbstractInsuranceFactory) provides an interface or abstract class with methods 
+to create products (e.g., createAutoInsurance(), createHealthInsurance(), createHomeInsurance()).
+
+Clients interact with this interface (AbstractInsuranceFactory)
+to request products of a specific variant 
+without knowing the concrete classes (e.g., BasicAutoInsurance or PremiumAutoInsurance).
+
+Consistency: The pattern ensures that all created products belong to the same family/variant.
+For example, BasicInsuranceFactory will only create BasicAutoInsurance, BasicHealthInsurance, and BasicLifeInsurance, 
+not mixed products like PremiumLifeInsurance or DeluxeHealthInsurance.
+
+This pattern promotes :
+loose coupling by isolating object creation from client code, 
+extensibility by allowing new product families (e.g.Deluxe) or products (e.g.LifeInsurance) can be added by creating new concrete factories and products without modifying existing code. 
+maintainability by centralizing creation logic.
+
+
+It adheres to the :
+SRP-> (Single Responsibility Principle), as each factory is responsible for creating products of specific variant,
+OCP-> (Open/Closed Principle), new factories or products can be added by extending InsuranceFactory or product hierarchies.

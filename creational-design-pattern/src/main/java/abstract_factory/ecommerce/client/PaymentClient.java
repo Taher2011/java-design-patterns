@@ -37,13 +37,15 @@ public class PaymentClient {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Testing Standard Payment Factory:");
+		System.out.println("Testing Standard Payment method:");
 		AbstractPaymentFactory standardPaymentMethod = AbstractPaymentFactory.createPaymentFactory(ModeType.STANDARD);
 		PaymentClient client = new PaymentClient(standardPaymentMethod, "creditcard");
 		System.out.println("\nStandard Credit Card Transaction:");
 		client.processTransaction();
 
-		System.out.println("\nTesting Secure Payment Factory:");
+		System.out.println("========================================================");
+
+		System.out.println("\nTesting Secure Payment method:");
 		AbstractPaymentFactory securePaymentMethod = AbstractPaymentFactory.createPaymentFactory(ModeType.SECURE);
 		client = new PaymentClient(securePaymentMethod, "paypal");
 		System.out.println("\nSecure PayPal Transaction:");

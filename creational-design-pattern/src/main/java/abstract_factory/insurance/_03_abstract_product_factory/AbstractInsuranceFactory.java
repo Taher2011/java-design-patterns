@@ -18,11 +18,11 @@ public abstract class AbstractInsuranceFactory {
 		factories.put(PlanType.PREMIUM, new PremiumInsuranceFactory());
 	}
 
-	public abstract AutoInsurance autoInsurance();
+	public abstract AutoInsurance createAutoInsurance();
 
-	public abstract HealthInsurance healthInsurance();
+	public abstract HealthInsurance createHealthInsurance();
 
-	public abstract HomeInsurance homeInsurance();
+	public abstract HomeInsurance createHomeInsurance();
 
 	public static AbstractInsuranceFactory createFactory(PlanType planType) {
 		AbstractInsuranceFactory abstractInsuranceFactory = factories.get(planType);

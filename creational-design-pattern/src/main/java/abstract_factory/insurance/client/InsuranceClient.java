@@ -13,9 +13,9 @@ public class InsuranceClient {
 	private final HomeInsurance homeInsurance;
 
 	public InsuranceClient(AbstractInsuranceFactory factory) {
-		autoInsurance = factory.autoInsurance();
-		healthInsurance = factory.healthInsurance();
-		homeInsurance = factory.homeInsurance();
+		autoInsurance = factory.createAutoInsurance();
+		healthInsurance = factory.createHealthInsurance();
+		homeInsurance = factory.createHomeInsurance();
 	}
 
 	public void description() {

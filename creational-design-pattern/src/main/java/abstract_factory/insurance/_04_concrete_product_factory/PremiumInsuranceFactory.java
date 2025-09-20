@@ -11,17 +11,17 @@ import abstract_factory.insurance._03_abstract_product_factory.AbstractInsurance
 public class PremiumInsuranceFactory extends AbstractInsuranceFactory {
 
 	@Override
-	public AutoInsurance autoInsurance() {
+	public AutoInsurance createAutoInsurance() {
 		return new PremiumAutoInsurance();
 	}
 
 	@Override
-	public HealthInsurance healthInsurance() {
+	public HealthInsurance createHealthInsurance() {
 		return new PremiumHealthInsurance();
 	}
 
 	@Override
-	public HomeInsurance homeInsurance() {
+	public HomeInsurance createHomeInsurance() {
 		return new PremiumHomeInsurance();
 	}
 }

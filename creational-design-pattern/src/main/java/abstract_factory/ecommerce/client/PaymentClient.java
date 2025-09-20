@@ -4,14 +4,13 @@ import abstract_factory.ecommerce._01_product.FraudCheck;
 import abstract_factory.ecommerce._01_product.PaymentMethod;
 import abstract_factory.ecommerce._01_product.TransactionReceipt;
 import abstract_factory.ecommerce._03_abstract_product_factory.AbstractPaymentFactory;
-import abstract_factory.ecommerce._04_concrete_product_factory.SecurePaymentFactory;
-import abstract_factory.ecommerce._04_concrete_product_factory.StandardPaymentFactory;
+import abstract_factory.ecommerce._05_enum.ModeType;
 
 public class PaymentClient {
 
-	PaymentMethod paymentMethod;
-	TransactionReceipt transactionReceipt;
-	FraudCheck fraudCheck;
+	private final PaymentMethod paymentMethod;
+	private final TransactionReceipt transactionReceipt;
+	private final FraudCheck fraudCheck;
 
 	public PaymentClient(AbstractPaymentFactory factory, String paymentType) {
 		switch (paymentType.toLowerCase()) {
@@ -39,14 +38,14 @@ public class PaymentClient {
 
 	public static void main(String[] args) {
 		System.out.println("Testing Standard Payment Factory:");
-		AbstractPaymentFactory standardFactory = new StandardPaymentFactory();
-		PaymentClient client = new PaymentClient(standardFactory, "creditcard");
+		AbstractPaymentFactory standardPaymentMethod = AbstractPaymentFactory.createPaymentFactory(ModeType.STANDARD);
+		PaymentClient client = new PaymentClient(standardPaymentMethod, "creditcard");
 		System.out.println("\nStandard Credit Card Transaction:");
 		client.processTransaction();
 
 		System.out.println("\nTesting Secure Payment Factory:");
-		AbstractPaymentFactory secureFactory = new SecurePaymentFactory();
-		client = new PaymentClient(secureFactory, "paypal");
+		AbstractPaymentFactory securePaymentMethod = AbstractPaymentFactory.createPaymentFactory(ModeType.SECURE);
+		client = new PaymentClient(securePaymentMethod, "paypal");
 		System.out.println("\nSecure PayPal Transaction:");
 		client.processTransaction();
 	}

@@ -8,9 +8,9 @@ import abstract_factory.insurance._05_enum.PlanType;
 
 public class InsuranceClient {
 
-	AutoInsurance autoInsurance;
-	HealthInsurance healthInsurance;
-	HomeInsurance homeInsurance;
+	private final AutoInsurance autoInsurance;
+	private final HealthInsurance healthInsurance;
+	private final HomeInsurance homeInsurance;
 
 	public InsuranceClient(AbstractInsuranceFactory factory) {
 		autoInsurance = factory.autoInsurance();

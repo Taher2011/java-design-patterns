@@ -1,11 +1,11 @@
 package abstract_factory.vehicle._02_concrete_product;
 
-import abstract_factory.vehicle._01_product.AmericanVehicle;
+import abstract_factory.vehicle._01_product.Sedan;
 
-public class StandardCanada extends AmericanVehicle {
+public class AmericanSedan extends Sedan {
 
 	@Override
 	public void describe() {
-		System.out.println("Standard Canadian vehicle with high-end features");
+		System.out.println("Sedan: Comfortable sedan with advanced safety features");
 	}
 }

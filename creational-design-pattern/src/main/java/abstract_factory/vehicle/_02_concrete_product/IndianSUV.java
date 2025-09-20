@@ -1,11 +1,11 @@
 package abstract_factory.vehicle._02_concrete_product;
 
-import abstract_factory.vehicle._01_product.EuropeanVehicle;
+import abstract_factory.vehicle._01_product.SUV;
 
-public class StandardFrance extends EuropeanVehicle {
+public class IndianSUV extends SUV {
 
 	@Override
 	public void describe() {
-		System.out.println("Standard French vehicle with high-end features");
+		System.out.println("SUV: Sturdy SUV designed for rough roads");
 	}
 }

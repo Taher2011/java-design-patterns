@@ -1,11 +1,11 @@
 package abstract_factory.vehicle._02_concrete_product;
 
-import abstract_factory.vehicle._01_product.EuropeanVehicle;
+import abstract_factory.vehicle._01_product.Sedan;
 
-public class PremiumEngland extends EuropeanVehicle {
+public class ChineseSedan extends Sedan {
 
 	@Override
 	public void describe() {
-		System.out.println("Premium English vehicle with high-end features");
+		System.out.println("Sedan: Stylish sedan with tech-loaded dashboard");
 	}
 }

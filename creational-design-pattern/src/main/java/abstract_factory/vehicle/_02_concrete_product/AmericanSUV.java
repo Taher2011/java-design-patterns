@@ -1,11 +1,11 @@
 package abstract_factory.vehicle._02_concrete_product;
 
-import abstract_factory.vehicle._01_product.AmericanVehicle;
+import abstract_factory.vehicle._01_product.SUV;
 
-public class PremiumAmerica extends AmericanVehicle {
+public class AmericanSUV extends SUV {
 
 	@Override
 	public void describe() {
-		System.out.println("Premium American vehicle with high-end features");
+		System.out.println("SUV: Rugged build with V8 engine");
 	}
 }

@@ -5,7 +5,7 @@ import abstract_factory.insurance._01_product.HomeInsurance;
 public class BasicHomeInsurance extends HomeInsurance {
 
 	@Override
-	public void homeInsurancepolicyDeatils() {
+	public void getPolicyDetails() {
 		System.out.println("Basic Home: Property damage up to $100,000");
 	}
 }

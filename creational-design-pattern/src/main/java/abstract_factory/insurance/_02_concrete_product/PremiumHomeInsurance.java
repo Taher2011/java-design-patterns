@@ -5,7 +5,7 @@ import abstract_factory.insurance._01_product.HomeInsurance;
 public class PremiumHomeInsurance extends HomeInsurance {
 
 	@Override
-	public void homeInsurancepolicyDeatils() {
+	public void getPolicyDetails() {
 		System.out.println("Premium Home: Property damage up to $500,000 + Natural disaster coverage");
 	}
 }

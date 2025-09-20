@@ -18,18 +18,20 @@ public class InsuranceClient {
 	}
 
 	public void description() {
-		autoInsurance.autoInsurancepolicyDeatils();
-		healthInsurance.healthInsurancepolicyDeatils();
-		homeInsurance.homeInsurancepolicyDeatils();
+		autoInsurance.getPolicyDetails();
+		healthInsurance.getPolicyDetails();
+		homeInsurance.getPolicyDetails();
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Testing Basic Insurance Factory:");
+		System.out.println("Details about Basic Insurance Policies:");
 		AbstractInsuranceFactory basicFactory = AbstractInsuranceFactory.createFactory("basic");
 		InsuranceClient standardClient = new InsuranceClient(basicFactory);
 		standardClient.description();
 
-		System.out.println("\nTesting Premium Insurance Factory:");
+		System.out.println("===============================================================");
+
+		System.out.println("\nDetails about Premium Insurance Policies:");
 		AbstractInsuranceFactory premiumFactory = AbstractInsuranceFactory.createFactory("premium");
 		InsuranceClient premiumClient = new InsuranceClient(premiumFactory);
 		premiumClient.description();

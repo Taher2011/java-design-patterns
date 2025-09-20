@@ -7,7 +7,8 @@ with concrete products(Burger,Pizza,Sandwich) implementing this interface.
 A factory(FoodFctory) interface or abstract class declares the factory method, 
 which concrete factories(BurgerFctory,PizzaFctory,SandwichFctory) implement to create specific concrete products.
 
-Clients interact with the factory(FoodFctory) to obtain product instances(Burger,Pizza,Sandwich), without needing to know the details of their creation.
+Clients interact with the factory(FoodFctory) to obtain product instances(Burger,Pizza,Sandwich), 
+without needing to know the details of their creation.
 
 This pattern promotes :
 loose coupling by isolating object creation from client code, 

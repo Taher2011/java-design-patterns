@@ -1,6 +1,12 @@
 The Singleton pattern is a creational design pattern that ensures a class has only one instance throughout the application
 and provides a single point of access to it. 
-This guarantees consistency, prevents multiple unnecessary object creations, and improves memory efficiency. 
-It is especially useful in scenarios where object creation is resource-intensive—such as database connections, file systems, or network connections
+
+This guarantees consistency, prevents multiple unnecessary object creations, 
+and improves memory efficiency. 
+
+It is especially useful in scenarios where object creation/connection is resource-intensive
+such as database connections, file systems, or network connections
 since these operations consume network bandwidth, memory, and CPU. 
-By using the Singleton pattern, we can optimize resource usage and avoid creating costly objects on each request.
+
+By using the Singleton pattern, we can optimize resource usage 
+and avoid creating costly objects/connections on each request.

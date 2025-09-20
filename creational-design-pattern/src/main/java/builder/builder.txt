@@ -1,7 +1,18 @@
 The Builder pattern is a creational design pattern used when object creation is complex, 
-such as when an object has multiple attributes (e.g., more than five), some of which are optional or require different combinations. 
-Instead of overloading constructors with multiple variations leads to cluttering the code and reduce readability.
+such as when an object has multiple attributes (e.g., more than five), 
+some of which are optional or 
+require different combinations. 
 
-Builder pattern provides a cleaner solution allowing us to create objects with specific field states as needed. 
-This improves code readability, maintainability, and flexibility. 
-It supports the creation of immutable objects and eliminates the need for constructor overloading.
+Instead of overloading constructors with multiple variations 
+leads to cluttering the code and reduce readability.
+
+Builder pattern provides a cleaner solution allowing us 
+to create objects with specific field states as needed. 
+
+It promotes :
+readability, 
+maintainability, 
+flexibility. 
+
+It supports the creation of immutable objects and 
+eliminates the need for constructor overloading.

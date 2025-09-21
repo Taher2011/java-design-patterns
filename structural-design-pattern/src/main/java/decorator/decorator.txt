@@ -1,0 +1,12 @@
+The Decorator Pattern, a structural design pattern, 
+dynamically adds behavior/functionality to objects at runtime
+by wrapping them in decorators, 
+without modifying their core class. 
+
+It promotes:
+extensibility: by enabling new decorators to add functionality without altering existing code. 
+reusability: same decorators (e.g., RoadsideAssistanceDecorator,PremiumSupportDecorator) can be applied to multiple insurance types (AutoInsurance, LifeInsurance). 
+
+It adheres:
+SRP -> each decorator has one responsibility 
+OCP -> new decorators can be added without modifying existing classes like AutoInsurance,LifeInsurance or Decorator classes.

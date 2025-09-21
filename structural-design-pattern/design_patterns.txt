@@ -1,0 +1,20 @@
+Actually, design patterns are the reusable templates or solutions, 
+not strict rules, but are guidelines. 
+
+Design patterns are the proven approaches 
+that can be applied to the most recurring problems
+occurred while designing a system, especially in object-oriented paradigms. 
+
+By adhering to the design patterns and solid principles, 
+the code becomes more modular, maintainable, 
+testable, reusable, 
+flexible, extensible, 
+loosely coupled and highly cohesive.
+
+Recurring Problems:->
+1) Multiple instances create resource wastage (DB connections, file handles, network resources).
+2) Client code tightly coupled to concrete classes, violates OCP (Open-Closed Principle).
+3) Two incompatible interfaces need to work together for business functionality.
+4) Need to add responsibilities to objects dynamically without modifying existing classes.
+5) Large number of similar objects consuming excessive memory.
+6) Subject object needs to update and notify to subscriber objects changing on state of subject automatically.

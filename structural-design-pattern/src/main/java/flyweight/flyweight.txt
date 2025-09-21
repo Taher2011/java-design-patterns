@@ -1,0 +1,20 @@
+The Flyweight Pattern is a structural design pattern, 
+optimizes memory by sharing immutable intrinsic state (e.g., coffee -> type, servingSize, price) 
+across multiple objects, each with own extrinsic state (e.g., order -> orderId,customerName,orderTable,orderTime), 
+supplied externally and not shared. 
+
+Intrinsic flyweight objects must be immutable for safe sharing.
+
+It promotes :
+efficiency via state reuse.
+
+
+It adheres to:
+SRP -> (each flyweight has one role) 
+where each flyweight object (e.g., Coffee) has one role: 
+holding immutable intrinsic state (e.g., type, servingSize, price) and 
+providing specific functionality (e.g., serve method) based on it, 
+combined with extrinsic state (e.g., order details: orderId, customerName) supplied externally.
+
+OCP -> (new flyweight can be added via factory without modifying code).
+new flyweight objects types like ESPRESSO, CAPPUCCINO can be added by using approach-2 i.e. using getCoffeeByMapApproach() in factory

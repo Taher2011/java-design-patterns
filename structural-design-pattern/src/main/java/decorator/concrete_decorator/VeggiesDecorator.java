@@ -13,7 +13,7 @@ public class VeggiesDecorator extends PizzaDecorator {
 
 	@Override
 	public String getDescription() {
-		return pizza.getDescription() + ", veggies topping";
+		return pizza.getDescription() + " + veggies topping";
 	}
 
 	@Override

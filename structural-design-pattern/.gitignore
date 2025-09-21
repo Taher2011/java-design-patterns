@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 .metadata/
-target/
+/target/
 bin/
 *.class
 .classpath

@@ -14,8 +14,8 @@ import lombok.Getter;
 public class Coffee implements CoffeeFlyweight {
 
 	private final String type; // intrinsic state
-	private final BigDecimal price;// intrinsic state
 	private final String servingSize;// intrinsic state
+	private final BigDecimal price;// intrinsic state
 
 	@Override
 	public void serve(Order order) {

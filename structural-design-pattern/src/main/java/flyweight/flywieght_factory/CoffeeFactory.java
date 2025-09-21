@@ -10,6 +10,7 @@ public class CoffeeFactory {
 
 	private Map<CoffeeType, Coffee> coffeeCache = new HashMap<>();
 
+	/* Approach-1 using map */
 	public Coffee getCoffee(CoffeeType coffeeType) {
 		if (coffeeType == null) {
 			throw new IllegalArgumentException("CoffeeType cannot be null");
@@ -24,6 +25,7 @@ public class CoffeeFactory {
 		return coffee;
 	}
 
+	/* Approach-2 using enums */
 	public Coffee getCoffee1(CoffeeType coffeeType) {
 		return coffeeType.getCoffee();
 	}

@@ -6,16 +6,16 @@ import flyweight.extrinsic_entity.Order;
 import flyweight.flyweight.CoffeeFlyweight;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+
+/*Flyweight objects are generally immutable so no setter , all fields are final and initialize once by constructor */
 
 @AllArgsConstructor
 @Getter
-@Setter
 public class Coffee implements CoffeeFlyweight {
 
-	private String type; // intrinsic state
-	private BigDecimal price;// intrinsic state
-	private String servingSize;// intrinsic state
+	private final String type; // intrinsic state
+	private final BigDecimal price;// intrinsic state
+	private final String servingSize;// intrinsic state
 
 	@Override
 	public void serve(Order order) {

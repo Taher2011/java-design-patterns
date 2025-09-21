@@ -19,8 +19,8 @@ public class Coffee implements CoffeeFlyweight {
 
 	@Override
 	public void serve(Order order) {
-		System.out.println("Serving " + servingSize + " " + type + " coffe for orderId " + order.getOrderId()
-				+ " on order table " + order.getOrderTable() + " for the customer " + order.getCustomerName()
-				+ " and price is " + price);
+		System.out.println("Serving '" + servingSize + "_" + type + "' coffee for orderId '" + order.getOrderId()
+				+ "' on order table '" + order.getOrderTable() + "' for the customer '" + order.getCustomerName()
+				+ "' and price is " + price);
 	}
 }

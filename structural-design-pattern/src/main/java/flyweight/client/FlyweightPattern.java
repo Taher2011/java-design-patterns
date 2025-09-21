@@ -21,7 +21,13 @@ public class FlyweightPattern {
 		coffee3.serve(new Order("XYZ7890", "Rohan", "Table-B1", LocalDateTime.now()));
 
 		Coffee coffee4 = coffeeFactory.getCoffee1(CoffeeType.LATTE_SMALL);
-		coffee4.serve(new Order("XYZ7890", "Rohan", "Table-B1", LocalDateTime.now()));
+		coffee4.serve(new Order("XYZ7786", "Roshan", "Table-B2", LocalDateTime.now()));
+
+		Coffee coffee5 = coffeeFactory.getCoffee(CoffeeType.CAPPUCCINO_SMALL);
+		coffee5.serve(new Order("PQR7890", "Rohan", "Table-B1", LocalDateTime.now()));
+
+		Coffee coffee6 = coffeeFactory.getCoffee(CoffeeType.CAPPUCCINO_SMALL);
+		coffee6.serve(new Order("PQR7412", "Rohit", "Table-V1", LocalDateTime.now()));
 
 		System.out.println("All orders processed successfully.");
 	}

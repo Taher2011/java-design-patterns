@@ -1,0 +1,18 @@
+The Adapter Pattern, a structural design pattern, 
+bridges two incompatible interfaces to achieve a business goal. 
+
+The target (PaymentProcessor) is the interface the client uses, 
+while the adaptee (ThirdPartyPaymentGateway) provides desired functionality 
+via a different interface. 
+
+The adapter (PaymentAdapter) implements the target and uses the adaptee as a field,
+ensuring compatibility without modifying either. 
+
+The client interacts only with the target, 
+unaware of the adaptee’s implementation.
+
+It promotes:
+loose coupling by decoupling the client from the adaptee’s implementation.
+reusability by allowing the adaptee to be used in contexts expecting the target interface.
+extensibility by adding new adaptees (e.g., new ThirdPartyPaymentGateway implementations) by passing them to the adapter’s constructor, 
+adhering to OCP without modifying PaymentAdapter or PaymentProcessor.

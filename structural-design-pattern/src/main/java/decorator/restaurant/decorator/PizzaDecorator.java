@@ -1,6 +1,6 @@
-package decorator.decorator;
+package decorator.restaurant.decorator;
 
-import decorator.component.Pizza;
+import decorator.restaurant.component.Pizza;
 
 public abstract class PizzaDecorator extends Pizza {
 

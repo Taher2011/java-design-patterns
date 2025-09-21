@@ -1,6 +1,6 @@
-package decorator.concrete_component;
+package decorator.restaurant.concrete_component;
 
-import decorator.component.Pizza;
+import decorator.restaurant.component.Pizza;
 
 public class IndianPizza extends Pizza {
 

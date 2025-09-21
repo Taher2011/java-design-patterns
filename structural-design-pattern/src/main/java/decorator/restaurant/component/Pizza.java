@@ -1,4 +1,4 @@
-package decorator.component;
+package decorator.restaurant.component;
 
 public abstract class Pizza {
 

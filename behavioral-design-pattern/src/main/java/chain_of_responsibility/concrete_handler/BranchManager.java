@@ -1,23 +1,32 @@
 package chain_of_responsibility.concrete_handler;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import chain_of_responsibility.dto.LoanRequest;
+import chain_of_responsibility.dto.Loan;
+import chain_of_responsibility.handler.BaseLoanApprovalHandler;
 import chain_of_responsibility.handler.LoanApprovalHandler;
 
-public class BranchManager extends LoanApprovalHandler {
+public class BranchManager extends BaseLoanApprovalHandler {
+
+	private LoanApprovalHandler approvalHandler;
+
+	public BranchManager(LoanApprovalHandler approvalHandler) {
+		super("Branch Manager");
+		this.approvalHandler = approvalHandler;
+	}
+
 	@Override
-	public void processLoanRequest(LoanRequest request) {
-		if (request.getAmount() <= 500000) {
-			System.out.println("Branch Manager approved loan of ₹" + request.getAmount() + " for "
-					+ request.getApplicantName() + " on " + LocalDateTime.now().withNano(0));
-		} else if (nextHandler != null) {
-			System.out.println(
-					"Branch Manager cannot approve ₹" + request.getAmount() + ". Passing to Regional Manager.");
-			nextHandler.processLoanRequest(request);
-		} else {
-			System.out.println(
-					"No handler available to approve ₹" + request.getAmount() + " for " + request.getApplicantName());
+	public Loan processLoanApplication(Loan loan) {
+		System.out.println("Processing loan applicant request of : " + loan.getApplicantName());
+		if (loan.getAmount().compareTo(BigDecimal.valueOf(8000000.0)) > 0) {
+			System.out.println("'" + this.getDesignation() + "' cannot approve ₹" + loan.getAmount() + ". Passing to '"
+					+ ((BaseLoanApprovalHandler) approvalHandler).getDesignation() + "' for further approval");
+			return approvalHandler.processLoanApplication(loan);
 		}
+		loan = Loan.builder().applicantName(loan.getApplicantName()).approvedBy(this.getDesignation())
+				.isloanApproved(true).loanAppovalTime(LocalDateTime.now()).status("Approved").amount(loan.getAmount())
+				.build();
+		return loan;
 	}
 }

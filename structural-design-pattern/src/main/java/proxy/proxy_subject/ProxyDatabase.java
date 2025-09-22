@@ -1,34 +1,78 @@
 package proxy.proxy_subject;
 
-import proxy.real_subject.Database;
-import proxy.subject.IDatabase;
+import java.sql.Connection;
+import java.sql.SQLException;
 
-public class ProxyDatabase implements IDatabase {
+import lombok.Getter;
+import proxy.real_subject.RealDatabase;
+import proxy.subject.Database;
+import proxy.util.DatabaseConnectionManager;
 
-	private String dbName;
+@Getter
+public class ProxyDatabase extends Database {
 
-	private Database dataBase;
+	private String currentUser;
+
+	private RealDatabase realDatabase;
+
+	private boolean isClosed;
 
 	public ProxyDatabase(String dbName) {
-		this.dbName = dbName;
+		super(dbName);
 	}
 
 	@Override
-	public void executeQuery(String query) {
-		String key = dbName + ":" + query;
+	public void executeQuery(String query) throws SQLException {
+
+		// Authentication
+		if (!isAuthorized()) {
+			throw new SecurityException("Access Denied for user: " + getCurrentUser());
+		}
+
 		// Validation
-		if (!isValidQuery(query)) {
-			System.out.println("Invalid query: " + query);
-			return;
+		validateQuery(query);
+
+		if (isClosed || (connection != null && connection.isClosed())) {
+			this.connection = initializeDB();
+			this.isClosed = false;
 		}
-		if (dataBase == null) {
-			dataBase = new Database(this.dbName);
+
+		// Lazy initialization
+		if (realDatabase == null) {
+			this.connection = initializeDB();
+			realDatabase = new RealDatabase(databaseName, connection);
 		}
-		dataBase.executeQuery(query);
+		realDatabase.executeQuery(query);
 	}
 
-	private boolean isValidQuery(String query) {
-		return query != null && !query.trim().isEmpty();
+	private boolean isAuthorized() {
+		return "admin".equalsIgnoreCase(getCurrentUser()) || "super_user".equalsIgnoreCase(getCurrentUser());
 	}
 
+	private void validateQuery(String query) {
+		if (query == null || query.trim().isEmpty()) {
+			throw new IllegalArgumentException("Invalid query");
+		}
+	}
+
+	private Connection initializeDB() throws SQLException {
+		Connection connection = DatabaseConnectionManager.databaseConnection(databaseName);
+		return connection;
+	}
+
+	public void setCurrentUser(String currentUser) {
+		this.currentUser = currentUser;
+	}
+
+	@Override
+	public void connectionclose() throws SQLException {
+		DatabaseConnectionManager.closeConnection(databaseName);
+		reset();
+	}
+
+	private void reset() {
+		this.isClosed = true;
+		this.connection = null;
+		this.realDatabase = null;
+	}
 }

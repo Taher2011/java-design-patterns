@@ -1,0 +1,13 @@
+Chain of Responsibility (CoR) pattern is a behavioral design pattern
+that allows a request to be passed
+along a chain of handlers, 
+where each handler decides either 
+to process the request or to forward it to the next handler
+in the chain.
+
+This decouples the sender of a request/client
+from its potential receivers,
+but the exact handler is determined at runtime. 
+promoting flexibility and extensibility.
+
+New handlers can be added or removed without modifying existing code.

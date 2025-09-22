@@ -1,0 +1,19 @@
+The Strategy Pattern is a behavioral design pattern
+that defines a family of strategies/algorithms, 
+each strategy encapsulates specific behavior(algorithm)/functionality and makes them interchangeable.
+
+The client interacts with the StrategyContext object, 
+which maintains a reference to the selected strategy 
+and delegates calls to the appropriate strategy 
+implementation at runtime.
+
+The specific strategy can be selected and swapped dynamically at runtime without changing the client code.
+
+It promotes: 
+flexibility : can swaps the strategy at runtime.
+extensibility : can add new strategy.
+maintainability : each strategy is self-contained and maintains own logic.
+
+It adheres to:
+SRP (Single Responsibility Principle)-> Each strategy has a single, well-defined purpose.
+OCP (Open/Closed Principle)-> New strategies can be added without modifying existing code.

@@ -1,0 +1,22 @@
+The Proxy Pattern is a structural design pattern focuses 
+on controlling access to a real object.
+
+Typically used when dealing with resource-intensive objects 
+such as database connections, file systems, or network services.
+
+Instead of the client directly creating and using the real object,
+the client interacts with a Proxy object.
+The client is unaware whether it’s talking to the proxy or the real object.
+
+The Proxy handles responsibilities like:
+Lazy initialization (creating the heavy object only when needed).
+Access control (validation, authentication, authorization).
+Additional business rules (logging, caching, auditing, rate limiting).
+
+Once these checks are done, 
+the Proxy delegates the request to the Real Object, 
+which does the actual work.
+
+Proxy ensures the real object is created only 
+when truly needed by passing all the checks
+such as validation, authentication, or access control.

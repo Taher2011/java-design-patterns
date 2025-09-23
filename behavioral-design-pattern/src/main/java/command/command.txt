@@ -1,0 +1,25 @@
+Command Pattern is a behavioral design pattern 
+that encapsulates a request as an object, 
+decoupling the sender (invoker) 
+from the receiver that performs the action. 
+
+The invoker triggers the command’s execution, 
+which delegates to the receiver. 
+
+This promotes :
+loose coupling
+extensibility
+
+and supports :
+undo
+queuing
+scheduling
+
+LightOnCommand and LightOffCommand encapsulates
+light control(on/off) requests for LightReceiver (e.g., turnOnLights for Bedroom or LivingRoom), 
+executed via RemoteInvoker or VoiceInvoker. 
+
+These enable 
+undo through a stack-based command history
+queuing for batch execution
+scheduling via ScheduledExecutorService for delayed actions.

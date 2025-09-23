@@ -1,28 +1,25 @@
 package command.concrete_command;
 
-import command.command.LightCommand;
+import command.command.Command;
 import command.receiver.LightReceiver;
 import lombok.Getter;
 
 @Getter
-public class LightOnCommand implements LightCommand {
+public class LightOnCommand implements Command {
 
 	private LightReceiver lightReceiver;
-	private String location;
 
-	public LightOnCommand(LightReceiver lightReceiver, String location) {
+	public LightOnCommand(LightReceiver lightReceiver) {
 		this.lightReceiver = lightReceiver;
-		this.location = location;
 	}
 
 	@Override
-	public void execute() {
-		lightReceiver.lightOnAction(location);
+	public boolean execute() {
+		return lightReceiver.turnOnLights();
 	}
 
 	@Override
 	public void undo() {
-		lightReceiver.lightOffAction(location);
+		lightReceiver.turnOffLights();
 	}
-
 }

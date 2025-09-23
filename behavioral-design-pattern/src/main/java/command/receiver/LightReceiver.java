@@ -12,21 +12,21 @@ public class LightReceiver {
 
 	public boolean turnOnLights() {
 		if (!isOn) {
-			System.out.println(room + " are switched-on now");
+			System.out.println(room + " lights are switched-on now");
 			isOn = true;
 			return true;
 		}
-		System.out.println(room + " are already switched-on");
+		System.out.println(room + " lights are already switched-on");
 		return false;
 	}
 
 	public boolean turnOffLights() {
 		if (isOn) {
-			System.out.println(room + " are switched-off now");
+			System.out.println(room + " lights are switched-off now");
 			isOn = false;
 			return true;
 		}
-		System.out.println(room + " are already switched-off");
+		System.out.println(room + " lights are already switched-off");
 		return false;
 	}
 }

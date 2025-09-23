@@ -12,11 +12,11 @@ import command.command.Command;
 //Invoker 1: Remote control with queue and scheduling
 public class RemoteInvoker {
 
-	private Command command;
+	private Command<Boolean> command;
 
-	private Stack<Command> historyCommands;
+	private Stack<Command<Boolean>> historyCommands;
 
-	private List<Command> queueCommands;
+	private List<Command<Boolean>> queueCommands;
 
 	private ScheduledExecutorService scheduler;
 
@@ -26,7 +26,7 @@ public class RemoteInvoker {
 		scheduler = new ScheduledThreadPoolExecutor(2);
 	}
 
-	public void setCommand(Command command) {
+	public void setCommand(Command<Boolean> command) {
 		this.command = command;
 	}
 
@@ -35,15 +35,15 @@ public class RemoteInvoker {
 			System.out.println("No command set!");
 			return;
 		}
-		boolean isActionDone = command.execute();
-		if (isActionDone) {
+		Boolean isActionDone = command.execute();
+		if (isActionDone.booleanValue()) {
 			historyCommands.push(command);
 		}
 	}
 
 	public void undo() {
 		if (!historyCommands.isEmpty()) {
-			Command poppedCommand = historyCommands.pop();
+			Command<Boolean> poppedCommand = historyCommands.pop();
 			System.out.print("Undo:");
 			poppedCommand.undo();
 			return;
@@ -51,7 +51,7 @@ public class RemoteInvoker {
 		System.out.println("No commands to undo!");
 	}
 
-	public void addCommand(Command command) {
+	public void addCommand(Command<Boolean> command) {
 		if (command != null) {
 			queueCommands.add(command);
 		}
@@ -59,9 +59,9 @@ public class RemoteInvoker {
 
 	public void executeAllCommands() {
 		if (!queueCommands.isEmpty()) {
-			for (Command command : queueCommands) {
-				boolean isActionDone = command.execute();
-				if (isActionDone) {
+			for (Command<Boolean> command : queueCommands) {
+				Boolean isActionDone = command.execute();
+				if (isActionDone.booleanValue()) {
 					historyCommands.push(command);
 				}
 			}
@@ -69,12 +69,12 @@ public class RemoteInvoker {
 		}
 	}
 
-	public void scheduleCommand(Command command, int delay, TimeUnit timeUnit) {
+	public void scheduleCommand(Command<Boolean> command, int delay, TimeUnit timeUnit) {
 		if (command != null) {
 			scheduler.schedule(() -> {
 				System.out.println("Scheduled command executed after " + delay + " " + timeUnit);
-				boolean isActionDone = command.execute();
-				if (isActionDone) {
+				Boolean isActionDone = command.execute();
+				if (isActionDone.booleanValue()) {
 					historyCommands.push(command);
 				}
 			}, delay, timeUnit);

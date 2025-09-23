@@ -17,10 +17,10 @@ public class CommandClient {
 		LightReceiver bedRoomLightReceiver = new LightReceiver("Bedroom");
 		LightReceiver livingRoomLightReceiver = new LightReceiver("LivingRoom");
 
-		Command bedroomLightOnCommand = new LightOnCommand(bedRoomLightReceiver);
-		Command bedroomLightOffCommand = new LightOffCommand(bedRoomLightReceiver);
-		Command livingroomLightOnCommand = new LightOnCommand(livingRoomLightReceiver);
-		Command livingroomLightOffCommand = new LightOffCommand(livingRoomLightReceiver);
+		Command<Boolean> bedroomLightOnCommand = new LightOnCommand(bedRoomLightReceiver);
+		Command<Boolean> bedroomLightOffCommand = new LightOffCommand(bedRoomLightReceiver);
+		Command<Boolean> livingroomLightOnCommand = new LightOnCommand(livingRoomLightReceiver);
+		Command<Boolean> livingroomLightOffCommand = new LightOffCommand(livingRoomLightReceiver);
 
 		// Test 1: Single Commands
 		System.out.println("=== Testing Single Commands ===");
@@ -28,7 +28,7 @@ public class CommandClient {
 		remoteInvoker.setCommand(bedroomLightOnCommand);
 		remoteInvoker.pressSwitch(); // bedroom On
 		remoteInvoker.pressSwitch(); // bedroom Already on
-		remoteInvoker.undo(); // Off
+		remoteInvoker.undo(); // bedroom Off
 		remoteInvoker.undo(); // No commands
 
 		// Test 2: Bulk Commands

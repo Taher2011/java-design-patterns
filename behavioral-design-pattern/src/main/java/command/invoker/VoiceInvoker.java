@@ -12,11 +12,11 @@ import command.command.Command;
 //Invoker 2: SmartHomeController with voice command simulation
 public class VoiceInvoker {
 
-	private Command command;
+	private Command<Boolean> command;
 
-	private Stack<Command> historyVoiceCommands;
+	private Stack<Command<Boolean>> historyVoiceCommands;
 
-	private List<Command> queueVoiceCommands;
+	private List<Command<Boolean>> queueVoiceCommands;
 
 	private ScheduledExecutorService scheduler;
 
@@ -26,21 +26,21 @@ public class VoiceInvoker {
 		scheduler = new ScheduledThreadPoolExecutor(2);
 	}
 
-	public void setCommand(Command command) {
+	public void setCommand(Command<Boolean> command) {
 		this.command = command;
 	}
 
 	public void executeVoiceCommand(String voiceInput) {
 		System.out.println("Voice command received: \"" + voiceInput + "\"");
-		boolean isActionDone = command.execute();
-		if (isActionDone) {
+		Boolean isActionDone = command.execute();
+		if (isActionDone.booleanValue()) {
 			historyVoiceCommands.push(command);
 		}
 	}
 
 	public void undo() {
 		if (!historyVoiceCommands.isEmpty()) {
-			Command poppedCommand = historyVoiceCommands.pop();
+			Command<Boolean> poppedCommand = historyVoiceCommands.pop();
 			System.out.print("Undo:");
 			poppedCommand.undo();
 			return;
@@ -48,17 +48,17 @@ public class VoiceInvoker {
 		System.out.println("No commands to undo!");
 	}
 
-	public void addVoiceCommand(Command command) {
+	public void addVoiceCommand(Command<Boolean> command) {
 		if (command != null) {
 			queueVoiceCommands.add(command);
 		}
 	}
 
-	public void executeAllVoiceCommanda() {
+	public void executeAllVoiceCommands() {
 		if (!queueVoiceCommands.isEmpty()) {
-			for (Command command : queueVoiceCommands) {
-				boolean isActionDone = command.execute();
-				if (isActionDone) {
+			for (Command<Boolean> command : queueVoiceCommands) {
+				Boolean isActionDone = command.execute();
+				if (isActionDone.booleanValue()) {
 					historyVoiceCommands.push(command);
 				}
 			}
@@ -66,12 +66,12 @@ public class VoiceInvoker {
 		}
 	}
 
-	public void scheduleVoiceCommand(Command command, int delay, TimeUnit timeUnit) {
+	public void scheduleVoiceCommand(Command<Boolean> command, int delay, TimeUnit timeUnit) {
 		if (command != null) {
 			scheduler.schedule(() -> {
 				System.out.println("Scheduled voice command executed after " + delay + " " + timeUnit);
-				boolean isActionDone = command.execute();
-				if (isActionDone) {
+				Boolean isActionDone = command.execute();
+				if (isActionDone.booleanValue()) {
 					historyVoiceCommands.push(command);
 				}
 			}, delay, timeUnit);

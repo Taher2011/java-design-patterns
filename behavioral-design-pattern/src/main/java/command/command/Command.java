@@ -1,8 +1,8 @@
 package command.command;
 
-public interface Command {
+public interface Command<T> {
 
-	boolean execute();
+	T execute();
 
 	void undo();
 }

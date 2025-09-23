@@ -5,7 +5,7 @@ import command.receiver.LightReceiver;
 import lombok.Getter;
 
 @Getter
-public class LightOffCommand implements Command {
+public class LightOffCommand implements Command<Boolean> {
 
 	private LightReceiver lightReceiver;
 
@@ -14,7 +14,7 @@ public class LightOffCommand implements Command {
 	}
 
 	@Override
-	public boolean execute() {
+	public Boolean execute() {
 		return lightReceiver.turnOffLights();
 	}
 

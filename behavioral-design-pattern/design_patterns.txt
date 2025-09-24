@@ -17,4 +17,4 @@ Recurring Problems:->
 3) Two incompatible interfaces need to work together for business functionality.
 4) Need to add responsibilities to objects dynamically without modifying existing classes.
 5) Large number of similar objects consuming excessive memory.
-6) Subject object needs to update and notify to subscriber objects changing on state of subject automatically.
+6) When Subject object state get changes, subject needs to update and notify to all of its subscriber objects automatically.

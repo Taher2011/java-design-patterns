@@ -1,19 +1,21 @@
 package observer.subject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
+import lombok.Getter;
 import observer.enums.WeatherType;
 import observer.observer.Observer;
 
+@Getter
 public class WeatherReport {
 
 	private double temperature;
 	private double humidity;
 	private double pressure;
-	private Map<WeatherType, List<Observer>> map = new HashMap<>();
+	private Map<WeatherType, List<Observer>> map = new EnumMap<>(WeatherType.class);
 
 	public WeatherReport() {
 		map.put(WeatherType.TEMPERATURE, new ArrayList<>());

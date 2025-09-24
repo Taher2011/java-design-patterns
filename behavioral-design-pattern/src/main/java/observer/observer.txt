@@ -1,0 +1,10 @@
+Observer Pattern is a behavioral design pattern 
+that defines a one-to-many dependency between
+a subject and its observers, 
+ensuring that all observers are 
+automatically notified and updated 
+when the subject’s state changes. 
+
+This promotes :
+loose coupling
+scalability.

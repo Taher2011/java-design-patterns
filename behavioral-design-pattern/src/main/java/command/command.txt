@@ -7,8 +7,9 @@ The invoker triggers the command’s execution,
 which delegates to the receiver. 
 
 This promotes :
-loose coupling
-extensibility
+loose coupling-> by decoupling the invoker from the receiver
+extensibility-> allows new commands to be added without modifying existing code
+reusability-> enhances reusability since command objects can be passed to different invokers.
 
 and supports :
 undo

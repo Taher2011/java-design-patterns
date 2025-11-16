@@ -7,9 +7,11 @@ public class Singleton {
 
 	private int data;
 
-//	The Bill Pugh Singleton (or Initialization-on-Demand Holder Idiom) is a singleton pattern implementation 
-//	that ensures lazy initialization and thread-safety without using the synchronized keyword. 
-//	It uses a private static inner class to hold the singleton instance, which is only loaded when getInstance() is called. 
+//	The Bill Pugh Singleton (or Initialization-on-Demand Holder Idiom) is a singleton pattern implementation
+//	that ensures lazy initialization and thread-safety without using the synchronized keyword.
+//	It uses a private static inner class to hold the singleton instance, which is only loaded when getInstance() is called.
+
+//	Bill Pugh Singleton is thread-safe because JVM guarantees that static inner class initialization is atomic and performed only once, even in multi-threaded environments
 
 	private static class SingletonHelper {
 		static final Singleton singleton = new Singleton();

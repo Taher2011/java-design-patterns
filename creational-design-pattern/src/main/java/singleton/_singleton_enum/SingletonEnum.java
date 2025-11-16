@@ -8,7 +8,11 @@ import java.io.ObjectOutputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-/*Enum-based singleton is thread-safe, serialization-safe, clone-safe, reflection-safe.*/
+/*Singleton via Enum is 100% safe: thread-safe by JVM, serialization-proof, clone-proof, reflection-proof.
+-->serialization (JVM ensures same instance),
+-->cloning (enums cannot be cloned),
+-->reflection (JVM prevents reflective construction of enum types).*/
+
 enum Singleton {
 
 	INSTANCE();

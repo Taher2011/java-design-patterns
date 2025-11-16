@@ -10,3 +10,13 @@ since these operations consume network bandwidth, memory, and CPU.
 
 By using the Singleton pattern, we can optimize resource usage 
 and avoid creating costly objects/connections on each request.
+
+Singleton via Enum is 100% safe: thread-safe by JVM, serialization-proof, clone-proof, reflection-proof.
+serialization (JVM ensures same instance),
+cloning (enums cannot be cloned),
+reflection (JVM prevents reflective construction of enum types).
+
+Singleton via Bill Pugh is thread-safe because JVM guarantees that 
+static inner class initialization is atomic and 
+performed only once, 
+even in multi-threaded environments.

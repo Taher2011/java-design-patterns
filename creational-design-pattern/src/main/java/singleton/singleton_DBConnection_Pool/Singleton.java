@@ -14,11 +14,10 @@ class DBConnectionPool {
 
 	private final List<Connection> connections;
 
-	private volatile boolean isClosed;
+	private volatile boolean isShutDown;
 
 	private DBConnectionPool() throws SQLException {
 		connections = new ArrayList<>(MAX_CONN_LIMITS);
-		isClosed = false;
 		initializePool();
 	}
 
@@ -51,17 +50,21 @@ class DBConnectionPool {
 	}
 
 	public synchronized Connection getDBConnection() throws SQLException {
-		if (isClosed) {
+		if (isShutDown) {
 			throw new SQLException("Connection pool is closed");
 		}
 		if (connections.isEmpty()) {
 			throw new SQLException("No connections available in the pool");
 		}
-		return connections.remove(0);
+		Connection connection = connections.remove(0);
+		if (connection.isClosed()) {
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mydb", "postgres", "root");
+		}
+		return connection;
 	}
 
 	public synchronized void releaseDBConnection(Connection connection) throws SQLException {
-		if (isClosed) {
+		if (isShutDown) {
 			throw new SQLException("Connection pool is closed");
 		}
 		if (connection != null && !connection.isClosed() && connections.size() < MAX_CONN_LIMITS) {
@@ -70,10 +73,10 @@ class DBConnectionPool {
 	}
 
 	public synchronized void closePool() throws SQLException {
-		if (isClosed) {
+		if (isShutDown) {
 			return;
 		}
-		isClosed = true;
+		isShutDown = true;
 		for (Connection connection : connections) {
 			if (connection != null && !connection.isClosed()) {
 				try {
